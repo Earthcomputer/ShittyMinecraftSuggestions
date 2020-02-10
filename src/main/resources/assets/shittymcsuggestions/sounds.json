@@ -1,0 +1,27 @@
+{
+  "auegh": {
+    "subtitle": "subtitle.shittymcsuggestions.auegh",
+    "sounds": [
+      "shittymcsuggestions:auegh",
+      "shittymcsuggestions:auegh2"
+    ]
+  },
+  "awman": {
+    "subtitle": "subtitle.shittymcsuggestions.awman",
+    "sounds": [
+      "shittymcsuggestions:awman"
+    ]
+  },
+  "lambsauce": {
+    "subtitle": "subtitle.shittymcsuggestions.lambsauce",
+    "sounds": [
+      "shittymcsuggestions:lambsauce"
+    ]
+  },
+  "wall": {
+    "subtitle": "subtitle.shittymcsuggestions.wall",
+    "sounds": [
+      "shittymcsuggestions:wall"
+    ]
+  }
+}

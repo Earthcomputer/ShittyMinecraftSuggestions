@@ -12,5 +12,6 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 	public void onInitialize() {
 		ModBlocks.register();
 		ModItems.register();
+		ModSounds.register();
 	}
 }

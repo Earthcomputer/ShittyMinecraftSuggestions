@@ -6,7 +6,10 @@
     "MixinAnimalEntity",
     "MixinAnimalMateGoal",
     "MixinFireBlock",
-    "MixinPigEntity"
+    "MixinPigEntity",
+    "MixinWallBlock",
+
+    "BlockAccessor"
   ],
   "client": [
   ],
