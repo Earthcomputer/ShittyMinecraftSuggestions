@@ -30,7 +30,7 @@ public class MixinWallBlock extends Block {
 
     @Unique
     private BlockSoundGroup createWallSoundGroup(BlockSoundGroup group) {
-        return new BlockSoundGroup(group.volume, group.pitch, group.getBreakSound(), group.getStepSound(), ModSounds.WALL, group.getHitSound(), group.getFallSound());
+        return new BlockSoundGroup(group.volume, group.pitch, ModSounds.TRUMP_NO, group.getStepSound(), ModSounds.WALL, group.getHitSound(), group.getFallSound());
     }
 
 }

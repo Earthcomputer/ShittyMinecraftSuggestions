@@ -23,5 +23,11 @@
     "sounds": [
       "shittymcsuggestions:wall"
     ]
+  },
+  "trump_no": {
+    "subtitle": "subtitle.shittymcsuggestions.trump_no",
+    "sounds": [
+      "shittymcsuggestions:trump_no"
+    ]
   }
 }

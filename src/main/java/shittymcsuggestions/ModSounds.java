@@ -10,6 +10,7 @@ public class ModSounds {
     public static final SoundEvent AWMAN = registerSound("awman");
     public static final SoundEvent LAMBSAUCE = registerSound("lambsauce");
     public static final SoundEvent WALL = registerSound("wall");
+    public static final SoundEvent TRUMP_NO = registerSound("trump_no");
 
     private static SoundEvent registerSound(String name) {
         Identifier id = new Identifier(ShittyMinecraftSuggestions.MODID, name);
