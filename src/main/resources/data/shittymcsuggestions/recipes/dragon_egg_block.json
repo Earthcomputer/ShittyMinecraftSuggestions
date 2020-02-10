@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:dragon_egg"
+    }
+  },
+  "result": {
+    "item": "shittymcsuggestions:dragon_egg_block"
+  }
+}

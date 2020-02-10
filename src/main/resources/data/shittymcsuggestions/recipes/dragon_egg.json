@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "shittymcsuggestions:dragon_egg_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dragon_egg",
+    "count": 3
+  }
+}

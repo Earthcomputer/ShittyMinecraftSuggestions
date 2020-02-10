@@ -1,14 +1,16 @@
 package shittymcsuggestions;
 
 import net.fabricmc.api.ModInitializer;
+import shittymcsuggestions.block.ModBlocks;
+import shittymcsuggestions.item.ModItems;
 
 public class ShittyMinecraftSuggestions implements ModInitializer {
+
+	public static final String MODID = "shittymcsuggestions";
+
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		System.out.println("Hello Fabric world!");
+		ModBlocks.register();
+		ModItems.register();
 	}
 }
