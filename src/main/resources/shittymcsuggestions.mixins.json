@@ -3,7 +3,10 @@
   "package": "shittymcsuggestions.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinFireBlock"
+    "MixinAnimalEntity",
+    "MixinAnimalMateGoal",
+    "MixinFireBlock",
+    "MixinPigEntity"
   ],
   "client": [
   ],
