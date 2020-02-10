@@ -13,6 +13,7 @@
     "BlockAccessor"
   ],
   "client": [
+    "ClientMixinCreeperEntity",
     "ClientMixinFurnaceBlock"
   ],
   "injectors": {
