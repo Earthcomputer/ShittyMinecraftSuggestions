@@ -3,6 +3,7 @@
   "package": "shittymcsuggestions.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MixinAbstractFurnaceBlockEntity",
     "MixinAnimalEntity",
     "MixinAnimalMateGoal",
     "MixinFireBlock",
@@ -12,6 +13,7 @@
     "BlockAccessor"
   ],
   "client": [
+    "ClientMixinFurnaceBlock"
   ],
   "injectors": {
     "defaultRequire": 1
