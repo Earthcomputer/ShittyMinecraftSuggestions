@@ -7,6 +7,7 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -27,8 +28,8 @@ public class ClientMixinCreeperEntity extends HostileEntity {
     private void onTick(CallbackInfo ci) {
         PlayerEntity player = MinecraftClient.getInstance().player;
         if (player != null && isPlayerStaring(player) && random.nextInt(10) == 0) {
-            float volume = player.inventory.armor.get(3).getItem() == Items.CARVED_PUMPKIN ? 10 : 5;
-            world.playSound(getX(), getY(), getZ(), ModSounds.AWMAN, SoundCategory.HOSTILE, volume, 1, true);
+            SoundEvent sound = player.inventory.armor.get(3).getItem() == Items.CARVED_PUMPKIN ? ModSounds.AWRAPE : ModSounds.AWMAN;
+            world.playSound(getX(), getY(), getZ(), sound, SoundCategory.HOSTILE, 1, 1, true);
         }
     }
 

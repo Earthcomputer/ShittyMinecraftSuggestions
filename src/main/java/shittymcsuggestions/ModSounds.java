@@ -8,6 +8,7 @@ public class ModSounds {
 
     public static final SoundEvent AUEGH = registerSound("auegh");
     public static final SoundEvent AWMAN = registerSound("awman");
+    public static final SoundEvent AWRAPE = registerSound("awrape");
     public static final SoundEvent LAMBSAUCE = registerSound("lambsauce");
     public static final SoundEvent WALL = registerSound("wall");
     public static final SoundEvent TRUMP_NO = registerSound("trump_no");
