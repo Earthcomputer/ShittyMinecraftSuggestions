@@ -40,7 +40,6 @@
   "block.minecraft.green_carpet": "Green String Slab",
   "block.minecraft.red_carpet": "Red String Slab",
   "block.minecraft.black_carpet": "Black String Slab",
-  "block.minecraft.black_carpet": "Black String Slab",
   "block.minecraft.white_wool": "White Block of String",
   "block.minecraft.orange_wool": "Orange Block of String",
   "block.minecraft.magenta_wool": "Magenta Block of String",
@@ -80,4 +79,9 @@
   "item.minecraft.lava_bucket": "Obsidian Ore",
   "item.minecraft.milk_bucket": "Cheese Ore",
   "item.minecraft.egg": "Scrambled Egg Ore",
+  "block.minecraft.cobweb": "String Ore",
+  "block.minecraft.oak_leaves": "Apple Ore",
+  "block.minecraft.sugar_cane": "Sugar Ore",
+  "item.minecraft.cooked_chicken": "Block of Chicken Nugget",
+  "item.minecraft.chicken": "Block of Chicken Nugget Ore"
 }
