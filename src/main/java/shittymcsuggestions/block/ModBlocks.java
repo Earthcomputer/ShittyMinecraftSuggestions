@@ -17,7 +17,7 @@ public class ModBlocks {
     public static final Block DRAGON_EGG_BLOCK = new DragonEggBlockBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
             .strength(50, 1200)
             .build());
-    public static final Block BEANOS_BLOCK = new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.PURPLE)
+    public static final Block BEANOS_BLOCK = new Block(FabricBlockSettings.of(Material.CAKE, MaterialColor.PURPLE)
             .sounds(ModSounds.BEANOS_BLOCK_SOUND)
             .build());
 
