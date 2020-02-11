@@ -7,6 +7,7 @@ import shittymcsuggestions.block.ModBlocks;
 import shittymcsuggestions.entity.ModEntities;
 import shittymcsuggestions.item.ModItems;
 import shittymcsuggestions.mixin.ItemAccessor;
+import shittymcsuggestions.statuseffects.ModStatusEffects;
 
 public class ShittyMinecraftSuggestions implements ModInitializer {
 
@@ -18,6 +19,7 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ModItems.register();
 		ModEntities.register();
 		ModSounds.register();
+		ModStatusEffects.register();
 
 		((ItemAccessor) Items.MELON).setFoodComponent(FoodComponents.MELON_SLICE);
 	}

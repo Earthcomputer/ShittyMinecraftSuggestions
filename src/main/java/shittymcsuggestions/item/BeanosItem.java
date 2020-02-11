@@ -2,6 +2,7 @@ package shittymcsuggestions.item;
 
 import net.minecraft.advancement.criterion.Criterions;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,8 +11,8 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 import shittymcsuggestions.ModSounds;
-import shittymcsuggestions.entity.ExplodingArrowEntity;
 import shittymcsuggestions.mixin.LivingEntityAccessor;
+import shittymcsuggestions.statuseffects.ModStatusEffects;
 
 public class BeanosItem extends Item {
 
@@ -40,9 +41,7 @@ public class BeanosItem extends Item {
         if (!(user instanceof PlayerEntity) || !((PlayerEntity) user).abilities.creativeMode)
             stack.decrement(1);
 
-        ExplodingArrowEntity arrow = new ExplodingArrowEntity(user, world);
-        arrow.setProperties(user, user.pitch, user.yaw, 0, 3, 1);
-        world.spawnEntity(arrow);
+        user.addStatusEffect(new StatusEffectInstance(ModStatusEffects.BEANOS, 300));
 
         return stack;
     }
