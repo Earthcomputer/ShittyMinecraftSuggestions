@@ -83,5 +83,6 @@
   "block.minecraft.oak_leaves": "Apple Ore",
   "block.minecraft.sugar_cane": "Sugar Ore",
   "item.minecraft.cooked_chicken": "Block of Chicken Nugget",
-  "item.minecraft.chicken": "Block of Chicken Nugget Ore"
+  "item.minecraft.chicken": "Block of Chicken Nugget Ore",
+  "block.minecraft.crafting_table": "Craftable"
 }
