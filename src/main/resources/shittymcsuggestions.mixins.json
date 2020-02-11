@@ -14,7 +14,8 @@
     "MixinWallBlock",
 
     "BlockAccessor",
-    "ItemAccessor"
+    "ItemAccessor",
+    "LivingEntityAccessor"
   ],
   "client": [
     "ClientMixinCreeperEntity",

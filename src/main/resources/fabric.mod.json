@@ -19,6 +19,9 @@
   "entrypoints": {
     "main": [
       "shittymcsuggestions.ShittyMinecraftSuggestions"
+    ],
+    "client": [
+      "shittymcsuggestions.client.ShittyMinecraftSuggestionsClient"
     ]
   },
   "mixins": [

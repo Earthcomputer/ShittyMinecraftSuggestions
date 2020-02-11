@@ -1,5 +1,6 @@
 package shittymcsuggestions;
 
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -13,6 +14,15 @@ public class ModSounds {
     public static final SoundEvent WALL = registerSound("wall");
     public static final SoundEvent TRUMP_NO = registerSound("trump_no");
     public static final SoundEvent WATERMELON_SCREAM = registerSound("watermelon_scream");
+    public static final SoundEvent BEANOS_BLOCK = registerSound("beanos_block");
+    public static final SoundEvent BEANOS = registerSound("beanos");
+
+    public static final BlockSoundGroup BEANOS_BLOCK_SOUND = new BlockSoundGroup(1, 1,
+            BlockSoundGroup.STONE.getBreakSound(),
+            BEANOS_BLOCK,
+            BlockSoundGroup.STONE.getPlaceSound(),
+            BlockSoundGroup.STONE.getHitSound(),
+            BEANOS_BLOCK);
 
     private static SoundEvent registerSound(String name) {
         Identifier id = new Identifier(ShittyMinecraftSuggestions.MODID, name);

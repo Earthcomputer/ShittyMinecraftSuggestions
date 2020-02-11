@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import shittymcsuggestions.ModSounds;
 import shittymcsuggestions.ShittyMinecraftSuggestions;
 
 public class ModBlocks {
@@ -16,22 +17,22 @@ public class ModBlocks {
     public static final Block DRAGON_EGG_BLOCK = new DragonEggBlockBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
             .strength(50, 1200)
             .build());
+    public static final Block BEANOS_BLOCK = new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.PURPLE)
+            .sounds(ModSounds.BEANOS_BLOCK_SOUND)
+            .build());
 
-    private static void registerBlock(String name, Block block) {
-        registerBlock(name, block, true);
-    }
-
-    private static void registerBlock(String name, Block block, boolean createItem) {
+    private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);
-        if (createItem) {
+        if (itemGroup != null) {
             Registry.register(Registry.ITEM,
                     new Identifier(ShittyMinecraftSuggestions.MODID, name),
-                    new BlockItem(block, new Item.Settings().group(ItemGroup.MISC)));
+                    new BlockItem(block, new Item.Settings().group(itemGroup)));
         }
     }
 
     public static void register() {
-        registerBlock("dragon_egg_block", DRAGON_EGG_BLOCK, false);
+        registerBlock("dragon_egg_block", DRAGON_EGG_BLOCK, null);
+        registerBlock("beanos_block", BEANOS_BLOCK, ItemGroup.DECORATIONS);
     }
 
 }

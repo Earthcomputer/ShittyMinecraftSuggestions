@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "shittymcsuggestions:block/beanos_block"
+    }
+  }
+}

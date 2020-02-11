@@ -40,5 +40,16 @@
     "sounds": [
       "shittymcsuggestions:watermelon_scream"
     ]
+  },
+  "beanos": {
+    "subtitle": "subtitle.shittymcsuggestions.beanos",
+    "sounds": [
+      "shittymcsuggestions:beanos"
+    ]
+  },
+  "beanos_block": {
+    "sounds": [
+      "shittymcsuggestions:beanos_block"
+    ]
   }
 }
