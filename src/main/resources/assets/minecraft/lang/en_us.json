@@ -83,6 +83,6 @@
   "block.minecraft.cobweb": "String Ore",
   "block.minecraft.oak_leaves": "Apple Ore",
   "block.minecraft.sugar_cane": "Sugar Ore",
-  "item.minecraft.cooked_chicken": "Block of Chicken Nugget"
+  "item.minecraft.cooked_chicken": "Block of Chicken Nugget",
   "item.minecraft.chicken": "Block of Chicken Nugget Ore"
 }
