@@ -35,5 +35,11 @@
     "sounds": [
       "shittymcsuggestions:trump_no"
     ]
+  },
+  "watermelon_scream": {
+    "subtitle": "subtitle.shittymcsuggestions.watermelon_scream",
+    "sounds": [
+      "shittymcsuggestions:watermelon_scream"
+    ]
   }
 }

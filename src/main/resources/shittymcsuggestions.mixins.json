@@ -7,10 +7,13 @@
     "MixinAnimalEntity",
     "MixinAnimalMateGoal",
     "MixinFireBlock",
+    "MixinItem",
+    "MixinLivingEntity",
     "MixinPigEntity",
     "MixinWallBlock",
 
-    "BlockAccessor"
+    "BlockAccessor",
+    "ItemAccessor"
   ],
   "client": [
     "ClientMixinCreeperEntity",
