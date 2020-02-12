@@ -1,11 +1,14 @@
 package shittymcsuggestions;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Items;
+import net.minecraft.util.Identifier;
 import shittymcsuggestions.block.ModBlocks;
 import shittymcsuggestions.entity.ModEntities;
 import shittymcsuggestions.item.ModItems;
+import shittymcsuggestions.mixin.BlockAccessor;
 import shittymcsuggestions.mixin.ItemAccessor;
 import shittymcsuggestions.statuseffects.ModStatusEffects;
 
@@ -21,6 +24,7 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ModSounds.register();
 		ModStatusEffects.register();
 
+		((BlockAccessor) Blocks.BEDROCK).setDropTableId(new Identifier(MODID, "blocks/bedrock"));
 		((ItemAccessor) Items.MELON).setFoodComponent(FoodComponents.MELON_SLICE);
 	}
 }

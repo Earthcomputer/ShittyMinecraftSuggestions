@@ -6,6 +6,7 @@
     "MixinAbstractFurnaceBlockEntity",
     "MixinAnimalEntity",
     "MixinAnimalMateGoal",
+    "MixinBlock",
     "MixinFireBlock",
     "MixinFishEntity",
     "MixinItem",
