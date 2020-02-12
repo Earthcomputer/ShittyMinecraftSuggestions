@@ -1,0 +1,38 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Extra Chromosome"
+        },
+        "description": {
+            "text": "Breed a Creeper from Pigs"
+        },
+        "icon": {
+            "item": "minecraft:porkchop"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "Breed creeper": {
+            "trigger": "minecraft:bred_animals",
+            "conditions": {
+                "child": {
+                    "type": "minecraft:creeper"
+                },
+                "parent": {
+                    "type": "minecraft:pig"
+                },
+                "partner": {
+                    "type": "minecraft:pig",
+                    "flags": {
+                        "is_baby": true
+                    }
+                }
+            }
+        }
+    },
+    "parent": "shittymcsuggestions:hot_dog"
+}

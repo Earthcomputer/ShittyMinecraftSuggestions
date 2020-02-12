@@ -1,0 +1,34 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "I am Speed"
+        },
+        "description": {
+            "text": "Drink Swiftness 2"
+        },
+        "icon": {
+            "item": "minecraft:potion"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "speed 2": {
+            "trigger": "minecraft:effects_changed",
+            "conditions": {
+                "effects": {
+                    "minecraft:speed": {
+                        "amplifier": {
+                            "min": 1,
+                            "max": 1
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "parent": "shittymcsuggestions:hot_dog"
+}

@@ -6,6 +6,7 @@ import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import shittymcsuggestions.block.ModBlocks;
+import shittymcsuggestions.criterion.ModCriterions;
 import shittymcsuggestions.entity.ModEntities;
 import shittymcsuggestions.item.ModItems;
 import shittymcsuggestions.mixin.BlockAccessor;
@@ -23,6 +24,7 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ModEntities.register();
 		ModSounds.register();
 		ModStatusEffects.register();
+		ModCriterions.register();
 
 		((BlockAccessor) Blocks.BEDROCK).setDropTableId(new Identifier(MODID, "blocks/bedrock"));
 		((ItemAccessor) Items.MELON).setFoodComponent(FoodComponents.MELON_SLICE);

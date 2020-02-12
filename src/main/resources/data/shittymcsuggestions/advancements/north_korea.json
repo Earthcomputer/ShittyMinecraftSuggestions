@@ -1,0 +1,29 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "North Korea"
+        },
+        "description": {
+            "text": "Starve to Death"
+        },
+        "icon": {
+            "item": "minecraft:lingering_potion"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "starve": {
+            "trigger": "shittymcsuggestions:player_death",
+            "conditions": {
+                "killing_blow": {
+                    "is_starvation": true
+                }
+            }
+        }
+    },
+    "parent": "shittymcsuggestions:hot_dog"
+}

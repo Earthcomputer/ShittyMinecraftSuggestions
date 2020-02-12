@@ -1,0 +1,29 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Alinity"
+        },
+        "description": {
+            "text": "Hit a Cat"
+        },
+        "icon": {
+            "item": "minecraft:cat_spawn_egg"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "hit cat": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:cat"
+                }
+            }
+        }
+    },
+    "parent": "shittymcsuggestions:hot_dog"
+}

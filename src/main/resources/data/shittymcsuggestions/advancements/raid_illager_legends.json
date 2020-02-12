@@ -1,0 +1,25 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Raid Illager Legends"
+        },
+        "description": {
+            "text": "This Modpack is Sponsored by Raid Illager Legends",
+            "strikethrough": true
+        },
+        "icon": {
+            "item": "minecraft:crossbow"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "end raid": {
+            "trigger": "minecraft:hero_of_the_village"
+        }
+    },
+    "parent": "shittymcsuggestions:hot_dog"
+}

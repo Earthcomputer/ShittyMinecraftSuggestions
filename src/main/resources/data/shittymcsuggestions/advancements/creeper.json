@@ -1,0 +1,28 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Creeper"
+        },
+        "description": {
+            "text": "Aw man...."
+        },
+        "icon": {
+            "item": "minecraft:gunpowder"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "kill 100 creepers": {
+            "trigger": "shittymcsuggestions:stat",
+            "conditions": {
+                "name": "minecraft.killed:minecraft.creeper",
+                "count": 100
+            }
+        }
+    },
+    "parent": "shittymcsuggestions:hot_dog"
+}

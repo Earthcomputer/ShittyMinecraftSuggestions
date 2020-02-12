@@ -1,0 +1,29 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Ok Loomer"
+        },
+        "description": {
+            "text": "Craft a Banner on a Craftable"
+        },
+        "icon": {
+            "item": "minecraft:mojang_banner_pattern"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "craft banner in craftab": {
+            "trigger": "shittymcsuggestions:craft_item",
+            "conditions": {
+                "predicate": {
+                    "tag": "minecraft:banners"
+                }
+            }
+        }
+    },
+    "parent": "shittymcsuggestions:hot_dog"
+}

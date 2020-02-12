@@ -1,0 +1,32 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Planned Parenthood"
+        },
+        "description": {
+            "text": "Kill a Baby Villager"
+        },
+        "icon": {
+            "item": "minecraft:villager_spawn_egg"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "kill baby villager": {
+            "trigger": "minecraft:entity_killed_player",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:villager",
+                    "flags": {
+                        "is_baby": true
+                    }
+                }
+            }
+        }
+    },
+    "parent": "shittymcsuggestions:hot_dog"
+}
