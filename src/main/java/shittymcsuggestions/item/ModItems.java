@@ -16,6 +16,9 @@ public class ModItems {
     public static final Item BEDROCK_AXE = new ModAxeItem(BedrockToolMaterial.INSTANCE, 5, -3f, new Item.Settings().group(ItemGroup.TOOLS));
     public static final Item BEDROCK_SHOVEL = new ShovelItem(BedrockToolMaterial.INSTANCE, 1.5f, -3f, new Item.Settings().group(ItemGroup.TOOLS));
     public static final Item BEDROCK_HOE = new HoeItem(BedrockToolMaterial.INSTANCE, -3f, new Item.Settings().group(ItemGroup.TOOLS));
+    public static final Item CHICKEN_NUGGET = new Item(new Item.Settings()
+            .group(ItemGroup.FOOD)
+            .food(FoodComponents.MELON_SLICE));
 
     private static void registerItem(String name, Item item) {
         Registry.register(Registry.ITEM, new Identifier(ShittyMinecraftSuggestions.MODID, name), item);
@@ -30,6 +33,7 @@ public class ModItems {
         registerItem("bedrock_axe", BEDROCK_AXE);
         registerItem("bedrock_shovel", BEDROCK_SHOVEL);
         registerItem("bedrock_hoe", BEDROCK_HOE);
+        registerItem("chicken_nugget", CHICKEN_NUGGET);
     }
 
 }
