@@ -21,6 +21,7 @@
     "BlockAccessor",
     "CriterionsAccessor",
     "ItemAccessor",
+    "ItemUsageContextAccessor",
     "LivingEntityAccessor"
   ],
   "client": [

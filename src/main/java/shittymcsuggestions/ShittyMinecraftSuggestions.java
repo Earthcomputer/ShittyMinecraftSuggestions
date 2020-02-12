@@ -7,6 +7,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import shittymcsuggestions.block.ModBlocks;
 import shittymcsuggestions.criterion.ModCriterions;
+import shittymcsuggestions.enchantment.ModEnchantments;
 import shittymcsuggestions.entity.ModEntities;
 import shittymcsuggestions.item.ModItems;
 import shittymcsuggestions.mixin.BlockAccessor;
@@ -23,6 +24,7 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ModItems.register();
 		ModEntities.register();
 		ModSounds.register();
+		ModEnchantments.register();
 		ModStatusEffects.register();
 		ModCriterions.register();
 
