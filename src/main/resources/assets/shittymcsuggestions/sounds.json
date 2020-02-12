@@ -32,7 +32,18 @@
   "trump_no": {
     "subtitle": "subtitle.shittymcsuggestions.trump_no",
     "sounds": [
-      "shittymcsuggestions:trump_no"
+      {
+        "name": "shittymcsuggestions:no_no_no",
+        "weight": 10
+      },
+      {
+        "name": "shittymcsuggestions:wrong",
+        "weight": 10
+      },
+      {
+        "name": "shittymcsuggestions:american_dream_is_dead",
+        "weight": 1
+      }
     ]
   },
   "watermelon_scream": {

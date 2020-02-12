@@ -31,7 +31,7 @@ public class BeanosItem extends Item {
             PlayerEntity player = (PlayerEntity) user;
             player.getHungerManager().eat(this, stack);
             player.incrementStat(Stats.USED.getOrCreateStat(this));
-            world.playSound(null, player.getX(), player.getY(), player.getZ(), ModSounds.BEANOS, SoundCategory.PLAYERS, 0.5f, world.random.nextFloat() * 0.1f + 0.9f);
+            world.playSoundFromEntity(null, player, ModSounds.BEANOS, SoundCategory.PLAYERS, 0.5f, world.random.nextFloat() * 0.1f + 0.9f);
             if (player instanceof ServerPlayerEntity) {
                 Criterions.CONSUME_ITEM.trigger((ServerPlayerEntity) player, stack);
             }
