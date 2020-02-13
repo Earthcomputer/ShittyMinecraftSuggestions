@@ -1,6 +1,7 @@
 {
   "block.shittymcsuggestions.beanos_block": "Beanos Block",
   "block.shittymcsuggestions.dragon_egg_block": "Dragon Egg Block",
+  "block.shittymcsuggestions.unlit_torch": "Unlit Torch",
 
   "effect.shittymcsuggestions.beanos": "Beanos",
 
@@ -21,5 +22,6 @@
   "subtitle.shittymcsuggestions.wall": "Wall",
   "subtitle.shittymcsuggestions.trump_no": "Trump Disapproves",
   "subtitle.shittymcsuggestions.watermelon_scream": "Watermelon Screams",
-  "subtitle.shittymcsuggestions.beanos": "Beanos Theme Song"
+  "subtitle.shittymcsuggestions.beanos": "Beanos Theme Song",
+  "subtitle.shittymcsuggestions.whoosh": "Whoosh"
 }

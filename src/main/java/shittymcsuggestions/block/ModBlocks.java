@@ -7,6 +7,7 @@ import net.minecraft.block.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import shittymcsuggestions.ModSounds;
@@ -19,6 +20,17 @@ public class ModBlocks {
             .build());
     public static final Block BEANOS_BLOCK = new Block(FabricBlockSettings.of(Material.CAKE, MaterialColor.PURPLE)
             .sounds(ModSounds.BEANOS_BLOCK_SOUND)
+            .build());
+    public static final Block UNLIT_TORCH = new UnlitTorchBlock(FabricBlockSettings.of(Material.PART)
+            .noCollision()
+            .breakInstantly()
+            .sounds(BlockSoundGroup.WOOD)
+            .build());
+    public static final Block UNLIT_WALL_TORCH = new UnlitWallTorchBlock(FabricBlockSettings.of(Material.PART)
+            .noCollision()
+            .breakInstantly()
+            .sounds(BlockSoundGroup.WOOD)
+            .dropsLike(UNLIT_TORCH)
             .build());
 
     private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
@@ -33,6 +45,8 @@ public class ModBlocks {
     public static void register() {
         registerBlock("dragon_egg_block", DRAGON_EGG_BLOCK, null);
         registerBlock("beanos_block", BEANOS_BLOCK, ItemGroup.DECORATIONS);
+        registerBlock("unlit_torch", UNLIT_TORCH, null);
+        registerBlock("unlit_wall_torch", UNLIT_WALL_TORCH, null);
     }
 
 }

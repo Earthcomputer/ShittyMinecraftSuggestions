@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=east": { "model": "shittymcsuggestions:block/unlit_wall_torch" },
+    "facing=south": { "model": "shittymcsuggestions:block/unlit_wall_torch", "y": 90 },
+    "facing=west": { "model": "shittymcsuggestions:block/unlit_wall_torch", "y": 180 },
+    "facing=north": { "model": "shittymcsuggestions:block/unlit_wall_torch", "y": 270 }
+  }
+}

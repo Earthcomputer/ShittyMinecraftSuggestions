@@ -8,6 +8,8 @@ import shittymcsuggestions.block.ModBlocks;
 
 public class ModItems {
 
+    public static final BlockItem UNLIT_TORCH = new WallStandingBlockItem(ModBlocks.UNLIT_TORCH, ModBlocks.UNLIT_WALL_TORCH,
+            new Item.Settings().group(ItemGroup.DECORATIONS));
     public static final Item BEANOS = new BeanosItem(new Item.Settings()
             .group(ItemGroup.FOOD)
             .food(new FoodComponent.Builder().hunger(20).alwaysEdible().build()));
@@ -27,6 +29,7 @@ public class ModItems {
     public static void register() {
         registerItem("dragon_egg_block", new BlockItem(ModBlocks.DRAGON_EGG_BLOCK,
                 new Item.Settings().group(ItemGroup.BUILDING_BLOCKS).maxCount(1)));
+        registerItem("unlit_torch", UNLIT_TORCH);
         registerItem("beanos", BEANOS);
         registerItem("bedrock_sword", BEDROCK_SWORD);
         registerItem("bedrock_pickaxe", BEDROCK_PICKAXE);

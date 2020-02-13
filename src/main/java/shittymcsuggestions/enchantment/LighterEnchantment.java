@@ -5,12 +5,10 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.Items;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.ActionResult;
+import shittymcsuggestions.item.ModItems;
 import shittymcsuggestions.mixin.ItemUsageContextAccessor;
 
 public class LighterEnchantment extends Enchantment {
@@ -32,9 +30,9 @@ public class LighterEnchantment extends Enchantment {
 
             ItemUsageContext usageContext = new ItemUsageContext(player, hand, hitResult);
             //noinspection ConstantConditions
-            ((ItemUsageContextAccessor) usageContext).setStack(new ItemStack(Items.TORCH));
+            ((ItemUsageContextAccessor) usageContext).setStack(new ItemStack(ModItems.UNLIT_TORCH));
 
-            if (!Items.TORCH.useOnBlock(usageContext).isAccepted())
+            if (!ModItems.UNLIT_TORCH.useOnBlock(usageContext).isAccepted())
                 return ActionResult.PASS;
 
             if (!world.isClient && !player.abilities.creativeMode)

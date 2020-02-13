@@ -62,5 +62,11 @@
     "sounds": [
       "shittymcsuggestions:beanos_block"
     ]
+  },
+  "whoosh": {
+    "subtitle": "subtitle.shittymcsuggestions.whoosh",
+    "sounds": [
+      "shittymcsuggestions:whoosh"
+    ]
   }
 }
