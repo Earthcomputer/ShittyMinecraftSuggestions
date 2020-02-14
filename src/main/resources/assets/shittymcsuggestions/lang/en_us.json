@@ -7,6 +7,11 @@
 
   "enchantment.shittymcsuggestions.lighter": "Lighter",
 
+  "entity.shittymcsuggestions.chicken_sheep": "Imposter Sheep",
+  "entity.shittymcsuggestions.pig_cow": "Imposter Cow",
+  "entity.shittymcsuggestions.cow_pig": "Imposter Pig",
+  "entity.shittymcsuggestions.sheep_chicken": "Imposter Chicken",
+
   "item.shittymcsuggestions.beanos": "Beanos",
   "item.shittymcsuggestions.bedrock_sword": "Bedrock Sword",
   "item.shittymcsuggestions.bedrock_pickaxe": "Bedrock Pickaxe",
