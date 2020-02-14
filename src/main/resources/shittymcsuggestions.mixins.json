@@ -16,6 +16,7 @@
     "MixinPigEntity",
     "MixinServerPlayerEntity",
     "MixinServerStatHandler",
+    "MixinSpawnHelper",
     "MixinWallBlock",
 
     "BlockAccessor",
