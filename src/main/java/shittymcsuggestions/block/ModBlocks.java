@@ -1,6 +1,7 @@
 package shittymcsuggestions.block;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
@@ -32,6 +33,11 @@ public class ModBlocks {
             .sounds(BlockSoundGroup.WOOD)
             .dropsLike(UNLIT_TORCH)
             .build());
+    public static final Block GRASSHOPPER = new GrasshopperBlock(FabricBlockSettings.of(Material.ORGANIC, MaterialColor.GREEN)
+            .strength(0.6f, 0.6f)
+            .sounds(BlockSoundGroup.GRASS)
+            .breakByTool(FabricToolTags.SHOVELS)
+            .build());
 
     private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);
@@ -47,6 +53,7 @@ public class ModBlocks {
         registerBlock("beanos_block", BEANOS_BLOCK, ItemGroup.DECORATIONS);
         registerBlock("unlit_torch", UNLIT_TORCH, null);
         registerBlock("unlit_wall_torch", UNLIT_WALL_TORCH, null);
+        registerBlock("grasshopper", GRASSHOPPER, ItemGroup.REDSTONE);
     }
 
 }

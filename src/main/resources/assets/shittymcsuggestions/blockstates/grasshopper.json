@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=down": { "model": "shittymcsuggestions:block/grasshopper" },
+    "facing=north": { "model": "shittymcsuggestions:block/grasshopper_side" },
+    "facing=south": { "model": "shittymcsuggestions:block/grasshopper_side", "y": 180 },
+    "facing=west": { "model": "shittymcsuggestions:block/grasshopper_side", "y": 270 },
+    "facing=east": { "model": "shittymcsuggestions:block/grasshopper_side", "y": 90 }
+  }
+}

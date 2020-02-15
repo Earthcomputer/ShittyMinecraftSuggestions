@@ -84,7 +84,7 @@
   "block.minecraft.sugar_cane": "Sugar Ore",
   "item.minecraft.cooked_chicken": "Block of Chicken Nugget",
   "item.minecraft.chicken": "Block of Chicken Nugget Ore",
-  "block.minecraft.crafting_table": "Craftable"
+  "block.minecraft.crafting_table": "Craftable",
   "death.attack.lava": "%1$s tried to swim in breans",
   "death.attack.lava.player": "%1$s tried to swim in beans to escape %2$s",
   "block.minecraft.observer": "Owobserver"

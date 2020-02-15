@@ -1,7 +1,10 @@
 package shittymcsuggestions;
 
+import com.google.common.collect.ImmutableSet;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
@@ -11,6 +14,7 @@ import shittymcsuggestions.enchantment.ModEnchantments;
 import shittymcsuggestions.entity.ModEntities;
 import shittymcsuggestions.item.ModItems;
 import shittymcsuggestions.mixin.BlockAccessor;
+import shittymcsuggestions.mixin.BlockEntityTypeAccessor;
 import shittymcsuggestions.mixin.ItemAccessor;
 import shittymcsuggestions.statuseffects.ModStatusEffects;
 
@@ -30,5 +34,9 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 
 		((BlockAccessor) Blocks.BEDROCK).setDropTableId(new Identifier(MODID, "blocks/bedrock"));
 		((ItemAccessor) Items.MELON).setFoodComponent(FoodComponents.MELON_SLICE);
+		((BlockEntityTypeAccessor) BlockEntityType.HOPPER).setBlocks(ImmutableSet.<Block>builder()
+				.addAll(((BlockEntityTypeAccessor) BlockEntityType.HOPPER).getBlocks())
+				.add(ModBlocks.GRASSHOPPER)
+				.build());
 	}
 }
