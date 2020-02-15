@@ -42,7 +42,7 @@
     {
       "name": "Cube",
       "from": [ 4, 0, 4 ],
-      "to": [ 12, 16, 12 ],
+      "to": [ 12, 15, 12 ],
       "faces": {
         "north": { "texture": "#thicc_torch_side", "uv": [ 7, 6, 9, 16 ] },
         "east": { "texture": "#thicc_torch_side", "uv": [ 7, 6, 9, 16 ] },
