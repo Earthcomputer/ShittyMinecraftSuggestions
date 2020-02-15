@@ -16,6 +16,7 @@ import shittymcsuggestions.item.ModItems;
 import shittymcsuggestions.mixin.BlockAccessor;
 import shittymcsuggestions.mixin.BlockEntityTypeAccessor;
 import shittymcsuggestions.mixin.ItemAccessor;
+import shittymcsuggestions.mixin.SpawnEggItemAccessor;
 import shittymcsuggestions.statuseffects.ModStatusEffects;
 
 public class ShittyMinecraftSuggestions implements ModInitializer {
@@ -34,6 +35,8 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 
 		((BlockAccessor) Blocks.BEDROCK).setDropTableId(new Identifier(MODID, "blocks/bedrock"));
 		((ItemAccessor) Items.MELON).setFoodComponent(FoodComponents.MELON_SLICE);
+		((SpawnEggItemAccessor) Items.SILVERFISH_SPAWN_EGG).setPrimaryColor(0xffb433);
+		((SpawnEggItemAccessor) Items.SILVERFISH_SPAWN_EGG).setSecondaryColor(0xff8000);
 		((BlockEntityTypeAccessor) BlockEntityType.HOPPER).setBlocks(ImmutableSet.<Block>builder()
 				.addAll(((BlockEntityTypeAccessor) BlockEntityType.HOPPER).getBlocks())
 				.add(ModBlocks.GRASSHOPPER)

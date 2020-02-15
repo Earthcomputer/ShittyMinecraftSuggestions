@@ -29,7 +29,8 @@
     "CriterionsAccessor",
     "ItemAccessor",
     "ItemUsageContextAccessor",
-    "LivingEntityAccessor"
+    "LivingEntityAccessor",
+    "SpawnEggItemAccessor"
   ],
   "client": [
     "ClientMixinClientPlayerEntity",
