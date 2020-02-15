@@ -87,5 +87,6 @@
   "block.minecraft.crafting_table": "Craftable",
   "death.attack.lava": "%1$s tried to swim in breans",
   "death.attack.lava.player": "%1$s tried to swim in beans to escape %2$s",
-  "block.minecraft.observer": "Owobserver"
+  "block.minecraft.observer": "Owobserver",
+  "item.minecraft.totem_of_undying": "Totem of Undyeing"
 }
