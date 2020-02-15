@@ -38,6 +38,12 @@ public class ModBlocks {
             .sounds(BlockSoundGroup.GRASS)
             .breakByTool(FabricToolTags.SHOVELS)
             .build());
+    public static final Block THICC_TORCH = new ThiccTorchBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.YELLOW)
+            .strength(2.0f,3.0f)
+            .sounds(BlockSoundGroup.WOOD)
+            .lightLevel(15)
+            .nonOpaque()
+            .build());
 
     private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);
@@ -54,6 +60,7 @@ public class ModBlocks {
         registerBlock("unlit_torch", UNLIT_TORCH, null);
         registerBlock("unlit_wall_torch", UNLIT_WALL_TORCH, null);
         registerBlock("grasshopper", GRASSHOPPER, ItemGroup.REDSTONE);
+        registerBlock("thicc_torch", THICC_TORCH, ItemGroup.DECORATIONS);
     }
 
 }

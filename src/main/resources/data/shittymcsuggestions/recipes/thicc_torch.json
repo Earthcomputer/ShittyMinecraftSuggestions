@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "|"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:coal_block"
+    },
+    "|": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "shittymcsuggestions:thicc_torch"
+  }
+}

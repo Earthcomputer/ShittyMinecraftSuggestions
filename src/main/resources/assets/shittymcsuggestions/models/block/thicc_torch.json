@@ -1,0 +1,56 @@
+{
+  "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+  "textures": {
+    "thicc_torch_top": "shittymcsuggestions:block/thicc_torch_top",
+    "thicc_torch_bottom": "shittymcsuggestions:block/thicc_torch_bottom",
+    "thicc_torch_side": "shittymcsuggestions:block/thicc_torch_side",
+    "particle": "shittymcsuggestions:block/thicc_torch_side"
+  },
+  "display": {
+    "gui": {
+      "rotation": [ 30, 45, 0 ],
+      "translation": [ 0, 0, 0 ],
+      "scale": [ 0.625, 0.625, 0.625 ]
+    },
+    "ground": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 0, 3, 0 ],
+      "scale": [ 0.25, 0.25, 0.25 ]
+    },
+    "fixed": {
+      "rotation": [ 0, 180, 0 ],
+      "translation": [ 0, 0, 0 ],
+      "scale": [ 1, 1, 1 ]
+    },
+    "head": {
+      "rotation": [ 0, 180, 0 ],
+      "translation": [ 0, 0, 0 ],
+      "scale": [ 1, 1, 1 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, 315, 0 ],
+      "translation": [ 0, 2.5, 0 ],
+      "scale": [ 0.4, 0.4, 0.4 ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [ 75, 315, 0 ],
+      "translation": [ 0, 2.5, 0 ],
+      "scale": [ 0.375, 0.375, 0.375 ]
+    }
+  },
+  "elements": [
+    {
+      "name": "Cube",
+      "from": [ 4, 0, 4 ],
+      "to": [ 12, 16, 12 ],
+      "faces": {
+        "north": { "texture": "#thicc_torch_side", "uv": [ 7, 6, 9, 16 ] },
+        "east": { "texture": "#thicc_torch_side", "uv": [ 7, 6, 9, 16 ] },
+        "south": { "texture": "#thicc_torch_side", "uv": [ 7, 6, 9, 16 ] },
+        "west": { "texture": "#thicc_torch_side", "uv": [ 7, 6, 9, 16 ] },
+        "up": { "texture": "#thicc_torch_top", "uv": [ 7, 6, 9, 8 ] },
+        "down": { "texture": "#thicc_torch_bottom", "uv": [ 7, 14, 9, 16 ] }
+      }
+    }
+  ]
+}
