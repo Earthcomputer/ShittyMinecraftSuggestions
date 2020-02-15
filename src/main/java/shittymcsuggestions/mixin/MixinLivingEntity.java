@@ -3,6 +3,7 @@ package shittymcsuggestions.mixin;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.LlamaSpitEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -13,6 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import shittymcsuggestions.block.ModBlocks;
 
 @Mixin(LivingEntity.class)
 public abstract class MixinLivingEntity extends Entity {
@@ -32,6 +34,15 @@ public abstract class MixinLivingEntity extends Entity {
                 spit.updatePosition(getX() + rotationVec.x, getEyeY() + rotationVec.y, getZ() + rotationVec.z);
                 spit.setVelocity(rotationVec.x, rotationVec.y, rotationVec.z, 1.5f, 10f);
                 world.spawnEntity(spit);
+            }
+        }
+    }
+
+    @Inject(method = "tick", at = @At("TAIL"))
+    private void steppedOn(CallbackInfo ci) {
+        if (!world.isClient) {
+            if (world.getBlockState(getLandingPos()).getBlock() == ModBlocks.THICC_TORCH) {
+                this.setOnFireFor(5);
             }
         }
     }
