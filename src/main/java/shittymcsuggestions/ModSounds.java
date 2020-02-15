@@ -17,6 +17,7 @@ public class ModSounds {
     public static final SoundEvent BEANOS_BLOCK = registerSound("beanos_block");
     public static final SoundEvent BEANOS = registerSound("beanos");
     public static final SoundEvent WHOOSH = registerSound("whoosh");
+    public static final SoundEvent OWO = registerSound("owo");
 
     public static final BlockSoundGroup BEANOS_BLOCK_SOUND = new BlockSoundGroup(1, 1,
             BlockSoundGroup.STONE.getBreakSound(),

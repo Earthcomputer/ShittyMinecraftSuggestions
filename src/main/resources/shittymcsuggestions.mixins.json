@@ -13,6 +13,7 @@
     "MixinFishEntity",
     "MixinItem",
     "MixinLivingEntity",
+    "MixinObserverBlock",
     "MixinPigEntity",
     "MixinServerPlayerEntity",
     "MixinServerStatHandler",

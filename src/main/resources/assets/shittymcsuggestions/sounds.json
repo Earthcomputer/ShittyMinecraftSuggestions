@@ -68,5 +68,11 @@
     "sounds": [
       "shittymcsuggestions:whoosh"
     ]
+  },
+  "owo": {
+    "subtitle": "subtitle.shittymcsuggestions.owo",
+    "sounds": [
+      "shittymcsuggestions:owo"
+    ]
   }
 }
