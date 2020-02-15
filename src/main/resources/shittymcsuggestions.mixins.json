@@ -16,6 +16,7 @@
     "MixinItem",
     "MixinItemEntity",
     "MixinLivingEntity",
+    "MixinNameTagItem",
     "MixinObserverBlock",
     "MixinPigEntity",
     "MixinServerPlayerEntity",
