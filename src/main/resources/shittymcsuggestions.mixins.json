@@ -9,6 +9,7 @@
     "MixinBlock",
     "MixinCraftingResultSlot",
     "MixinDamageSourcePredicate",
+    "MixinDonkeyEntity",
     "MixinFireBlock",
     "MixinFishEntity",
     "MixinHopperBlockEntity",

@@ -20,6 +20,7 @@ public class ModSounds {
     public static final SoundEvent WHOOSH = registerSound("whoosh");
     public static final SoundEvent OWO = registerSound("owo");
     public static final SoundEvent CAVEBEE = registerSound("cavebee");
+    public static final SoundEvent FUCKING_DONKEY = registerSound("fuckingdonkey");
 
     public static final BlockSoundGroup BEANOS_BLOCK_SOUND = new BlockSoundGroup(1, 1,
             BlockSoundGroup.STONE.getBreakSound(),
