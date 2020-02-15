@@ -80,5 +80,11 @@
     "sounds": [
       "shittymcsuggestions:owo"
     ]
+  },
+  "cavebee": {
+    "subtitle": "subtitle.shittymcsuggestions.cavebee",
+    "sounds": [
+      "shittymcsuggestions:cavebee"
+    ]
   }
 }

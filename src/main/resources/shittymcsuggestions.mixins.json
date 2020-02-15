@@ -7,7 +7,6 @@
     "MixinAnimalEntity",
     "MixinAnimalMateGoal",
     "MixinBlock",
-    "MixinClientPlayerEntity",
     "MixinCraftingResultSlot",
     "MixinDamageSourcePredicate",
     "MixinFireBlock",
@@ -31,6 +30,7 @@
     "LivingEntityAccessor"
   ],
   "client": [
+    "ClientMixinClientPlayerEntity",
     "ClientMixinCreeperEntity",
     "ClientMixinFurnaceBlock"
   ],
