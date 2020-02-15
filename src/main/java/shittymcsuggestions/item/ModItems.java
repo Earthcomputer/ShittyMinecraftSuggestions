@@ -5,6 +5,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import shittymcsuggestions.ShittyMinecraftSuggestions;
 import shittymcsuggestions.block.ModBlocks;
+import shittymcsuggestions.entity.ModEntities;
 
 public class ModItems {
 
@@ -21,6 +22,10 @@ public class ModItems {
     public static final Item CHICKEN_NUGGET = new Item(new Item.Settings()
             .group(ItemGroup.FOOD)
             .food(FoodComponents.MELON_SLICE));
+    public static final Item CHICKEN_SHEEP_SPAWN_EGG = new SpawnEggItem(ModEntities.CHICKEN_SHEEP, 0xffb5b5, 0xe7e7e7, new Item.Settings().group(ItemGroup.MISC));
+    public static final Item COW_PIG_SPAWN_EGG = new SpawnEggItem(ModEntities.COW_PIG, 0xdb635f, 0xf0a5a2, new Item.Settings().group(ItemGroup.MISC));
+    public static final Item PIG_COW_SPAWN_EGG = new SpawnEggItem(ModEntities.PIG_COW, 0xa1a1a1, 0x443626, new Item.Settings().group(ItemGroup.MISC));
+    public static final Item SHEEP_CHICKEN_SPAWN_EGG = new SpawnEggItem(ModEntities.SHEEP_CHICKEN, 0xff0000, 0xa1a1a1, new Item.Settings().group(ItemGroup.MISC));
 
     private static void registerItem(String name, Item item) {
         Registry.register(Registry.ITEM, new Identifier(ShittyMinecraftSuggestions.MODID, name), item);
@@ -37,6 +42,10 @@ public class ModItems {
         registerItem("bedrock_shovel", BEDROCK_SHOVEL);
         registerItem("bedrock_hoe", BEDROCK_HOE);
         registerItem("chicken_nugget", CHICKEN_NUGGET);
+        registerItem("chicken_sheep_spawn_egg", CHICKEN_SHEEP_SPAWN_EGG);
+        registerItem("cow_pig_spawn_egg", COW_PIG_SPAWN_EGG);
+        registerItem("pig_cow_spawn_egg", PIG_COW_SPAWN_EGG);
+        registerItem("sheep_chicken_spawn_egg", SHEEP_CHICKEN_SPAWN_EGG);
     }
 
 }
