@@ -89,5 +89,6 @@
   "death.attack.lava.player": "%1$s tried to swim in beans to escape %2$s",
   "block.minecraft.observer": "Owobserver",
   "item.minecraft.totem_of_undying": "Totem of Undyeing",
-  "item.minecraft.diamond": "Block of Diamond Nugget"
+  "item.minecraft.diamond": "Block of Diamond Nugget",
+  "item.minecraft.silverfish_spawn_egg": "Goldfish Spawn Egg"
 }
