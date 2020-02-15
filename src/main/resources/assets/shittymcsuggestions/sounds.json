@@ -46,6 +46,12 @@
       }
     ]
   },
+  "china": {
+    "subtitle": "subtitle.shittymcsuggestions.china",
+    "sounds": [
+      "shittymcsuggestions:china"
+    ]
+  },
   "watermelon_scream": {
     "subtitle": "subtitle.shittymcsuggestions.watermelon_scream",
     "sounds": [

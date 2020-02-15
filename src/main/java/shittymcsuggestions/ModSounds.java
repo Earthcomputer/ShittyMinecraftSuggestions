@@ -13,6 +13,7 @@ public class ModSounds {
     public static final SoundEvent LAMBSAUCE = registerSound("lambsauce");
     public static final SoundEvent WALL = registerSound("wall");
     public static final SoundEvent TRUMP_NO = registerSound("trump_no");
+    public static final SoundEvent CHINA = registerSound("china");
     public static final SoundEvent WATERMELON_SCREAM = registerSound("watermelon_scream");
     public static final SoundEvent BEANOS_BLOCK = registerSound("beanos_block");
     public static final SoundEvent BEANOS = registerSound("beanos");
