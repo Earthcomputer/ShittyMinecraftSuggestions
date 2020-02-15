@@ -1,5 +1,6 @@
 package shittymcsuggestions.mixin;
 
+import net.minecraft.block.AbstractGlassBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -16,6 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import shittymcsuggestions.ModSounds;
 import shittymcsuggestions.block.UnlitTorchBlock;
+import shittymcsuggestions.entity.ModDamageSource;
 import shittymcsuggestions.item.ModItems;
 
 @Mixin(Block.class)
@@ -38,6 +40,14 @@ public class MixinBlock {
                     world.setBlockState(pos, UnlitTorchBlock.fromTorch(state), 11);
                 world.playSound(null, pos, ModSounds.WHOOSH, SoundCategory.BLOCKS, 1, 1);
             }
+        }
+    }
+
+    @Inject(method = "onBreak", at = @At("HEAD"))
+    private void onOnBreak(World world, BlockPos pos, BlockState state, PlayerEntity player, CallbackInfo ci) {
+        //noinspection ConstantConditions
+        if (!world.isClient && (Object) this instanceof AbstractGlassBlock && player.getMainHandStack().isEmpty()) {
+            player.damage(ModDamageSource.GLASS, 2);
         }
     }
 

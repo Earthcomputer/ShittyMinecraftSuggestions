@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import shittymcsuggestions.ShittyMinecraftSuggestions;
