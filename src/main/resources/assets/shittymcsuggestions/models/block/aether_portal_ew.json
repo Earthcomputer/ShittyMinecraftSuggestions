@@ -1,7 +1,7 @@
 {
     "textures": {
-        "particle": "shittymcsuggestions:blocks/aether_portal",
-        "portal": "shittymcsuggestions:blocks/aether_portal"
+        "particle": "shittymcsuggestions:block/aether_portal",
+        "portal": "shittymcsuggestions:block/aether_portal"
     },
     "elements": [
         {   "from": [ 6, 0, 0 ],

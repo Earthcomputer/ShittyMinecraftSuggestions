@@ -44,6 +44,13 @@ public class ModBlocks {
             .lightLevel(15)
             .nonOpaque()
             .build());
+    public static final Block AETHER_PORTAL = new AetherPortalBlock(FabricBlockSettings.of(Material.PORTAL)
+            .noCollision()
+            .strength(-1.0f, -1.0f)
+            .sounds(BlockSoundGroup.GLASS)
+            .lightLevel(11)
+            .dropsNothing()
+            .build());
 
     private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);
@@ -61,6 +68,7 @@ public class ModBlocks {
         registerBlock("unlit_wall_torch", UNLIT_WALL_TORCH, null);
         registerBlock("grasshopper", GRASSHOPPER, ItemGroup.REDSTONE);
         registerBlock("thicc_torch", THICC_TORCH, ItemGroup.DECORATIONS);
+        registerBlock("aether_portal", AETHER_PORTAL, null);
     }
 
 }
