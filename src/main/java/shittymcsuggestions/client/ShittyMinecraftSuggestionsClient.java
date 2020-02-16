@@ -22,6 +22,7 @@ public class ShittyMinecraftSuggestionsClient implements ClientModInitializer {
         EntityRendererRegistry.INSTANCE.register(ModEntities.SHEEP_CHICKEN, (dispatcher, ctx) -> new SheepChickenEntityRenderer(dispatcher));
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.UNLIT_TORCH, ModBlocks.UNLIT_WALL_TORCH);
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.AETHER_PORTAL, RenderLayer.getTranslucent());
     }
 
 }

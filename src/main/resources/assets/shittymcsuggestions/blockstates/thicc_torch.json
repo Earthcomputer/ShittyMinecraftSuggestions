@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": { "model": "shittymcsuggestions:block/thicc_torch" }
+    "facing=up": { "model": "shittymcsuggestions:block/thicc_torch" },
+    "facing=down": { "model": "shittymcsuggestions:block/thicc_torch", "x": 180 },
+    "facing=east": { "model": "shittymcsuggestions:block/thicc_torch", "y": 90, "x": 90 },
+    "facing=south": { "model": "shittymcsuggestions:block/thicc_torch", "y": 180, "x": 90 },
+    "facing=west": { "model": "shittymcsuggestions:block/thicc_torch", "y": 270, "x": 90 },
+    "facing=north": { "model": "shittymcsuggestions:block/thicc_torch", "y": 0, "x": 90 }
   }
 }

@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.LlamaSpitEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -15,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import shittymcsuggestions.block.ModBlocks;
+import shittymcsuggestions.block.ThiccTorchBlock;
 
 @Mixin(LivingEntity.class)
 public abstract class MixinLivingEntity extends Entity {
@@ -37,14 +39,4 @@ public abstract class MixinLivingEntity extends Entity {
             }
         }
     }
-
-    @Inject(method = "tick", at = @At("TAIL"))
-    private void steppedOn(CallbackInfo ci) {
-        if (!world.isClient) {
-            if (world.getBlockState(getLandingPos()).getBlock() == ModBlocks.THICC_TORCH) {
-                this.setOnFireFor(5);
-            }
-        }
-    }
-
 }

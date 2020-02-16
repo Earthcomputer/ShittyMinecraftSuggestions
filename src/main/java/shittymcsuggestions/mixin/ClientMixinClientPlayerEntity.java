@@ -4,6 +4,7 @@ import com.mojang.authlib.GameProfile;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -48,7 +49,8 @@ public class ClientMixinClientPlayerEntity extends AbstractClientPlayerEntity {
         if (getY() <= 20) {
             if (!hasPlayedCavebee) {
                 hasPlayedCavebee = true;
-                world.playSoundFromEntity(this, this, ModSounds.CAVEBEE, SoundCategory.PLAYERS, 1, 1);
+                if (!this.getName().getString().equalsIgnoreCase("RubiksExplosion"))
+                    world.playSoundFromEntity(this, this, ModSounds.CAVEBEE, SoundCategory.PLAYERS, 1, 1);
             }
         } else if (getY() > 22) {
             hasPlayedCavebee = false;
