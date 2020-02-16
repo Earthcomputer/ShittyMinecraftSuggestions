@@ -33,6 +33,7 @@
     "SpawnEggItemAccessor"
   ],
   "client": [
+    "ClientMixinBeeEntityRenderer",
     "ClientMixinClientPlayerEntity",
     "ClientMixinCreeperEntity",
     "ClientMixinFurnaceBlock"
