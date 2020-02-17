@@ -29,13 +29,15 @@ public abstract class MixinLivingEntity extends Entity {
             slice = @Slice(from = @At(value = "FIELD", target = "Lnet/minecraft/util/UseAction;EAT:Lnet/minecraft/util/UseAction;")),
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;playSound(Lnet/minecraft/sound/SoundEvent;FF)V", ordinal = 0))
     private void onEat(ItemStack stack, int particleCount, CallbackInfo ci) {
-        if (!world.isClient && stack.getItem() == Items.MELON) {
-            LlamaSpitEntity spit = EntityType.LLAMA_SPIT.create(world);
-            if (spit != null) {
-                Vec3d rotationVec = getRotationVec(1).normalize();
-                spit.updatePosition(getX() + rotationVec.x, getEyeY() + rotationVec.y, getZ() + rotationVec.z);
-                spit.setVelocity(rotationVec.x, rotationVec.y, rotationVec.z, 1.5f, 10f);
-                world.spawnEntity(spit);
+        if (!world.isClient) {
+            if (stack.getItem() == Items.MELON) {
+                LlamaSpitEntity spit = EntityType.LLAMA_SPIT.create(world);
+                if (spit != null) {
+                    Vec3d rotationVec = getRotationVec(1).normalize();
+                    spit.updatePosition(getX() + rotationVec.x, getEyeY() + rotationVec.y, getZ() + rotationVec.z);
+                    spit.setVelocity(rotationVec.x, rotationVec.y, rotationVec.z, 1.5f, 10f);
+                    world.spawnEntity(spit);
+                }
             }
         }
     }

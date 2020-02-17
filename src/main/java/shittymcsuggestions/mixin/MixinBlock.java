@@ -2,6 +2,8 @@ package shittymcsuggestions.mixin;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -54,6 +56,9 @@ public class MixinBlock {
         //noinspection ConstantConditions
         if (!world.isClient && (Object) this instanceof AbstractGlassBlock && player.getMainHandStack().isEmpty()) {
             player.damage(ModDamageSource.GLASS, 2);
+        }
+        if (!world.isClient && player.getMainHandStack().isEmpty()) {
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 100, 2));
         }
     }
 
