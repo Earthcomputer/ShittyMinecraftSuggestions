@@ -92,5 +92,11 @@
     "sounds": [
       "shittymcsuggestions:fuckingdonkey"
     ]
+  },
+  "sheephit": {
+    "subtitle": "subtitle.shittymcsuggestions.sheephit",
+    "sounds": [
+      "shittymcsuggestions:sheephit"
+    ]
   }
 }

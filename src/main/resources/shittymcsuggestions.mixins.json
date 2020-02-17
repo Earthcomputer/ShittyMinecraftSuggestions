@@ -31,6 +31,7 @@
     "BlockAccessor",
     "BlockEntityTypeAccessor",
     "CriterionsAccessor",
+    "GoalSelectorAccessor",
     "ItemAccessor",
     "ItemUsageContextAccessor",
     "LivingEntityAccessor",
@@ -41,7 +42,8 @@
     "ClientMixinBeeEntityRenderer",
     "ClientMixinClientPlayerEntity",
     "ClientMixinCreeperEntity",
-    "ClientMixinFurnaceBlock"
+    "ClientMixinFurnaceBlock",
+    "ClientMixinSheepEntityRenderer"
   ],
   "injectors": {
     "defaultRequire": 1
