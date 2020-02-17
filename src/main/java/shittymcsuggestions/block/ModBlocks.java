@@ -2,9 +2,7 @@ package shittymcsuggestions.block;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tools.FabricToolTags;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -51,6 +49,13 @@ public class ModBlocks {
             .lightLevel(11)
             .dropsNothing()
             .build());
+    public static final PistonBlock BEDROCK_PISTON = new BedrockPistonBlock(false, FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
+            .strength(-1f, 3600000f)
+            .build());
+    public static final PistonHeadBlock BEDROCK_PISTON_HEAD = new CustomPistonHeadBlock(BEDROCK_PISTON, null, FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
+            .strength(-1f, 3600000f)
+            .dropsNothing()
+            .build());
 
     private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);
@@ -69,6 +74,8 @@ public class ModBlocks {
         registerBlock("grasshopper", GRASSHOPPER, ItemGroup.REDSTONE);
         registerBlock("thicc_torch", THICC_TORCH, ItemGroup.DECORATIONS);
         registerBlock("aether_portal", AETHER_PORTAL, null);
+        registerBlock("bedrock_piston", BEDROCK_PISTON, ItemGroup.REDSTONE);
+        registerBlock("bedrock_piston_head", BEDROCK_PISTON_HEAD, null);
     }
 
 }

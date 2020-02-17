@@ -1,9 +1,6 @@
 package shittymcsuggestions.mixin;
 
-import net.minecraft.block.AbstractGlassBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -16,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import shittymcsuggestions.ModSounds;
+import shittymcsuggestions.block.ModBlocks;
 import shittymcsuggestions.block.UnlitTorchBlock;
 import shittymcsuggestions.entity.ModDamageSource;
 import shittymcsuggestions.item.ModItems;
@@ -25,10 +23,18 @@ public class MixinBlock {
 
     @Inject(method = "calcBlockBreakingDelta", at = @At("HEAD"), cancellable = true)
     private void onCalcBlockBreakingDelta(BlockState state, PlayerEntity player, BlockView world, BlockPos pos, CallbackInfoReturnable<Float> ci) {
-        if ((Object) this == Blocks.BEDROCK && player.getMainHandStack().getItem() == ModItems.BEDROCK_PICKAXE) {
-            float hardness = Blocks.OBSIDIAN.getDefaultState().getHardness(world, pos);
+        Block block = (Block) (Object) this;
+        boolean usingBedrockPick = player.getMainHandStack().getItem() == ModItems.BEDROCK_PICKAXE;
+        boolean isBedrockPickOnly = false;
+        if (block == Blocks.BEDROCK || block == ModBlocks.BEDROCK_PISTON || block == ModBlocks.BEDROCK_PISTON_HEAD) {
+            isBedrockPickOnly = true;
+        }
+
+        if (isBedrockPickOnly) {
+            Block likeBlock = usingBedrockPick ? Blocks.OBSIDIAN : Blocks.BEDROCK;
+            float hardness = likeBlock.getDefaultState().getHardness(world, pos);
             int factor = 30;
-            ci.setReturnValue(player.getBlockBreakingSpeed(Blocks.OBSIDIAN.getDefaultState()) / hardness / factor);
+            ci.setReturnValue(player.getBlockBreakingSpeed(likeBlock.getDefaultState()) / hardness / factor);
         }
     }
 

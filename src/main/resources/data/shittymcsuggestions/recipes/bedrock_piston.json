@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "#I#",
+    "#R#"
+  ],
+  "key": {
+    "W": {
+      "tag": "minecraft:planks"
+    },
+    "#": {
+      "item": "minecraft:bedrock"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "shittymcsuggestions:bedrock_piston"
+  }
+}

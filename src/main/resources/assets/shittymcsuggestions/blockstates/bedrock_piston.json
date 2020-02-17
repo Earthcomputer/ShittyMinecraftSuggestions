@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "extended=false,facing=down": { "model": "shittymcsuggestions:block/bedrock_piston", "x": 90 },
+    "extended=false,facing=up": { "model": "shittymcsuggestions:block/bedrock_piston", "x": 270 },
+    "extended=false,facing=north": { "model": "shittymcsuggestions:block/bedrock_piston" },
+    "extended=false,facing=south": { "model": "shittymcsuggestions:block/bedrock_piston", "y": 180 },
+    "extended=false,facing=west": { "model": "shittymcsuggestions:block/bedrock_piston", "y": 270 },
+    "extended=false,facing=east": { "model": "shittymcsuggestions:block/bedrock_piston", "y": 90 },
+    "extended=true,facing=down": { "model": "shittymcsuggestions:block/bedrock_piston_base", "x": 90 },
+    "extended=true,facing=up": { "model": "shittymcsuggestions:block/bedrock_piston_base", "x": 270 },
+    "extended=true,facing=north": { "model": "shittymcsuggestions:block/bedrock_piston_base" },
+    "extended=true,facing=south": { "model": "shittymcsuggestions:block/bedrock_piston_base", "y": 180 },
+    "extended=true,facing=west": { "model": "shittymcsuggestions:block/bedrock_piston_base", "y": 270 },
+    "extended=true,facing=east": { "model": "shittymcsuggestions:block/bedrock_piston_base", "y": 90 }
+  }
+}

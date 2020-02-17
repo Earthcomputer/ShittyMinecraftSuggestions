@@ -1,0 +1,8 @@
+{
+  "parent": "block/template_piston",
+  "textures": {
+    "bottom": "shittymcsuggestions:block/bedrock_piston_bottom",
+    "side": "shittymcsuggestions:block/bedrock_piston_side",
+    "platform": "shittymcsuggestions:block/bedrock_piston_top"
+  }
+}

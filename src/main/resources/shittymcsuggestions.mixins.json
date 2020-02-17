@@ -20,6 +20,8 @@
     "MixinNameTagItem",
     "MixinObserverBlock",
     "MixinPigEntity",
+    "MixinPistonBlock",
+    "MixinPistonHandler",
     "MixinServerPlayerEntity",
     "MixinServerStatHandler",
     "MixinSpawnHelper",

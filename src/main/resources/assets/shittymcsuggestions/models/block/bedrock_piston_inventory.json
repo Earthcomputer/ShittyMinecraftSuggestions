@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "shittymcsuggestions:block/bedrock_piston_bottom",
+    "side": "shittymcsuggestions:block/bedrock_piston_side",
+    "top": "shittymcsuggestions:block/bedrock_piston_top"
+  }
+}
