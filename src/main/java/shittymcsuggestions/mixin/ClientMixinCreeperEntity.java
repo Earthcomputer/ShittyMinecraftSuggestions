@@ -29,7 +29,7 @@ public class ClientMixinCreeperEntity extends HostileEntity {
         PlayerEntity player = MinecraftClient.getInstance().player;
         if (player != null && isPlayerStaring(player) && random.nextInt(10) == 0) {
             SoundEvent sound = player.inventory.armor.get(3).getItem() == Items.CARVED_PUMPKIN ? ModSounds.AWRAPE : ModSounds.AWMAN;
-            world.playSound(getX(), getY(), getZ(), sound, SoundCategory.HOSTILE, 1, 1, true);
+            world.playSound(player.getX(), player.getY(), player.getZ(), sound, SoundCategory.HOSTILE, 1, 1, true);
         }
     }
 
