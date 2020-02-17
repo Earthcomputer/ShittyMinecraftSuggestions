@@ -6,10 +6,10 @@
     "###"
   ],
   "key": {
-    "#": {
+    "_": {
       "item": "minecraft:cobblestone"
     },
-    "_": {
+    "#": {
       "tag": "minecraft:beds"
     }
   },
