@@ -31,7 +31,8 @@
     "ItemAccessor",
     "ItemUsageContextAccessor",
     "LivingEntityAccessor",
-    "SpawnEggItemAccessor"
+    "SpawnEggItemAccessor",
+    "WeightedPickerEntryAccessor"
   ],
   "client": [
     "ClientMixinBeeEntityRenderer",
