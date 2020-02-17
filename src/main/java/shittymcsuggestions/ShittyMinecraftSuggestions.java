@@ -13,6 +13,7 @@ import shittymcsuggestions.criterion.ModCriterions;
 import shittymcsuggestions.enchantment.ModEnchantments;
 import shittymcsuggestions.entity.ModEntities;
 import shittymcsuggestions.item.ModItems;
+import shittymcsuggestions.item.ShearHandler;
 import shittymcsuggestions.mixin.BlockAccessor;
 import shittymcsuggestions.mixin.BlockEntityTypeAccessor;
 import shittymcsuggestions.mixin.ItemAccessor;
@@ -32,6 +33,8 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ModEnchantments.register();
 		ModStatusEffects.register();
 		ModCriterions.register();
+
+		ShearHandler.reigsterEvent();
 
 		((BlockAccessor) Blocks.BEDROCK).setDropTableId(new Identifier(MODID, "blocks/bedrock"));
 		((ItemAccessor) Items.MELON).setFoodComponent(FoodComponents.MELON_SLICE);
