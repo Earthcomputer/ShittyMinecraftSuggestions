@@ -27,6 +27,9 @@ public class ShearHandler {
                 HorseEntity horse = (HorseEntity) entity;
                 SkeletonHorseEntity skeletonHorse = EntityType.SKELETON_HORSE.create(world);
                 if (skeletonHorse != null) {
+                    int leatherCount = 1 + horse.getRandom().nextInt(3);
+                    for (int i = 0; i < leatherCount; i++)
+                        horse.dropItem(Items.LEATHER);
                     copyEntity(horse, skeletonHorse);
                     skeletonHorse.setOwnerUuid(horse.getOwnerUuid());
                     horse.remove();
