@@ -24,6 +24,7 @@
     "MixinPistonHandler",
     "MixinServerPlayerEntity",
     "MixinServerStatHandler",
+    "MixinSheepEntity",
     "MixinSpawnHelper",
     "MixinWallBlock",
 
