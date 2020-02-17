@@ -7,7 +7,9 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.SpawnType;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.entity.mob.SkeletonHorseEntity;
+import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.passive.HorseEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -34,6 +36,21 @@ public class ShearHandler {
                     skeletonHorse.setOwnerUuid(horse.getOwnerUuid());
                     horse.remove();
                     world.spawnEntity(skeletonHorse);
+                }
+            }
+            return true;
+        }
+        if (entity instanceof ZombieEntity) {
+            if (!world.isClient) {
+                ZombieEntity zombie = (ZombieEntity) entity;
+                SkeletonEntity skeleton = EntityType.SKELETON.create(world);
+                if (skeleton != null) {
+                    int fleshCount = 1 + zombie.getRandom().nextInt(2);
+                    for (int i = 0; i < fleshCount; i++)
+                        zombie.dropItem(Items.ROTTEN_FLESH);
+                    copyEntity(zombie, skeleton);
+                    zombie.remove();
+                    world.spawnEntity(skeleton);
                 }
             }
             return true;
