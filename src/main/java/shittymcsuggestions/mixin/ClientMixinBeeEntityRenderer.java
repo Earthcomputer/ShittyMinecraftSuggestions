@@ -27,6 +27,6 @@ public abstract class ClientMixinBeeEntityRenderer extends MobEntityRenderer {
 
     @Override
     protected void scale(LivingEntity entity, MatrixStack matrixStack, float f) {
-        matrixStack.scale(2, 2, 2);
+        matrixStack.scale(4, 4, 4);
     }
 }
