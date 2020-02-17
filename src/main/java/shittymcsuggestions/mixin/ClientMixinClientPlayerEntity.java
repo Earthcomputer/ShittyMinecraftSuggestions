@@ -49,7 +49,7 @@ public class ClientMixinClientPlayerEntity extends AbstractClientPlayerEntity {
         if (getY() <= 20) {
             if (!hasPlayedCavebee) {
                 hasPlayedCavebee = true;
-                if (!this.getName().getString().equalsIgnoreCase("RubiksExplosion"))
+                if (this.getName().getString().equalsIgnoreCase("samnrad"))
                     world.playSoundFromEntity(this, this, ModSounds.CAVEBEE, SoundCategory.PLAYERS, 1, 1);
             }
         } else if (getY() > 22) {
