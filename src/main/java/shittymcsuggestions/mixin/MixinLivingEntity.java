@@ -2,24 +2,27 @@ package shittymcsuggestions.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.projectile.LlamaSpitEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import shittymcsuggestions.block.ModBlocks;
-import shittymcsuggestions.block.ThiccTorchBlock;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import shittymcsuggestions.entity.ModDamageSource;
 
 @Mixin(LivingEntity.class)
 public abstract class MixinLivingEntity extends Entity {
+
+    @Shadow public abstract ItemStack getEquippedStack(EquipmentSlot equipmentSlot);
 
     public MixinLivingEntity(EntityType<?> type, World world) {
         super(type, world);
@@ -39,6 +42,15 @@ public abstract class MixinLivingEntity extends Entity {
                     world.spawnEntity(spit);
                 }
             }
+        }
+    }
+
+    @Inject(method = "damage", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/LivingEntity;knockbackVelocity:F", ordinal = 0), cancellable = true)
+    private void onDamage(DamageSource damageSource, float damage, CallbackInfoReturnable<Boolean> ci) {
+        if (damageSource == DamageSource.FALL
+                && (getEquippedStack(EquipmentSlot.MAINHAND).getItem() == Items.SHEARS
+                || getEquippedStack(EquipmentSlot.OFFHAND).getItem() == Items.SHEARS)) {
+            ci.setReturnValue(damage(ModDamageSource.FALL_SHEARS, Float.MAX_VALUE));
         }
     }
 }

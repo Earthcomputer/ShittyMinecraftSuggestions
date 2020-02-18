@@ -4,6 +4,7 @@ import net.minecraft.entity.damage.DamageSource;
 
 public class ModDamageSource extends DamageSource {
 
+    public static final DamageSource FALL_SHEARS = new ModDamageSource("fall_shears").setUnblockable().setBypassesArmor();
     public static final DamageSource GLASS = new ModDamageSource("glass").setUnblockable().setBypassesArmor();
 
     protected ModDamageSource(String name) {

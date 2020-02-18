@@ -9,6 +9,8 @@
 
   "container.grasshopper": "Item Grasshopper",
 
+  "death.attack.shittymcsuggestions.fall_shears": "%1$s fell whilst holding shears",
+  "death.attack.shittymcsuggestions.fall_shears.player": "%1$s fell whilst holding shears whilst trying to escape %2$s",
   "death.attack.shittymcsuggestions.glass": "%1$s broke too many mirrors",
 
   "effect.shittymcsuggestions.beanos": "Beanos",
