@@ -17,6 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import shittymcsuggestions.ModSounds;
 import shittymcsuggestions.entity.ModDamageSource;
 
 @Mixin(LivingEntity.class)
@@ -51,6 +52,13 @@ public abstract class MixinLivingEntity extends Entity {
                 && (getEquippedStack(EquipmentSlot.MAINHAND).getItem() == Items.SHEARS
                 || getEquippedStack(EquipmentSlot.OFFHAND).getItem() == Items.SHEARS)) {
             ci.setReturnValue(damage(ModDamageSource.FALL_SHEARS, Float.MAX_VALUE));
+        }
+    }
+
+    @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;onDeath(Lnet/minecraft/entity/damage/DamageSource;)V"))
+    private void onOnDeath(DamageSource damageSource, float damage, CallbackInfoReturnable<Boolean> ci) {
+        if (damageSource == DamageSource.FALL || damageSource == ModDamageSource.FALL_SHEARS) {
+            world.playSound(null, getX(), getY(), getZ(), ModSounds.DEATH_BY_FALL, getSoundCategory(), 1, 1);
         }
     }
 }

@@ -98,5 +98,11 @@
     "sounds": [
       "shittymcsuggestions:sheephit"
     ]
+  },
+  "deathbyfall": {
+    "subtitle": "subtitle.shittymcsuggestions.deathbyfall",
+    "sounds": [
+      "shittymcsuggestions:deathbyfall"
+    ]
   }
 }

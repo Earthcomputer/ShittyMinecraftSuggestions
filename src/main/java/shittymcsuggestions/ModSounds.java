@@ -22,6 +22,7 @@ public class ModSounds {
     public static final SoundEvent CAVEBEE = registerSound("cavebee");
     public static final SoundEvent FUCKING_DONKEY = registerSound("fuckingdonkey");
     public static final SoundEvent SHEEP_HIT = registerSound("sheephit");
+    public static final SoundEvent DEATH_BY_FALL = registerSound("deathbyfall");
 
     public static final BlockSoundGroup BEANOS_BLOCK_SOUND = new BlockSoundGroup(1, 1,
             BlockSoundGroup.STONE.getBreakSound(),
