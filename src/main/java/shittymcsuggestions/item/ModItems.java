@@ -26,6 +26,8 @@ public class ModItems {
     public static final Item COW_PIG_SPAWN_EGG = new SpawnEggItem(ModEntities.COW_PIG, 0xdb635f, 0xf0a5a2, new Item.Settings().group(ItemGroup.MISC));
     public static final Item PIG_COW_SPAWN_EGG = new SpawnEggItem(ModEntities.PIG_COW, 0xa1a1a1, 0x443626, new Item.Settings().group(ItemGroup.MISC));
     public static final Item SHEEP_CHICKEN_SPAWN_EGG = new SpawnEggItem(ModEntities.SHEEP_CHICKEN, 0xff0000, 0xa1a1a1, new Item.Settings().group(ItemGroup.MISC));
+    public static final Item LORAX_SPAWN_EGG = new SpawnEggItem(ModEntities.LORAX, 0xff7d00, 0xfef364, new Item.Settings().group(ItemGroup.MISC));
+    public static final Item LORAX_MOUSTACHE = new Item(new Item.Settings().group(ItemGroup.MISC));
 
     private static void registerItem(String name, Item item) {
         Registry.register(Registry.ITEM, new Identifier(ShittyMinecraftSuggestions.MODID, name), item);
@@ -46,6 +48,8 @@ public class ModItems {
         registerItem("cow_pig_spawn_egg", COW_PIG_SPAWN_EGG);
         registerItem("pig_cow_spawn_egg", PIG_COW_SPAWN_EGG);
         registerItem("sheep_chicken_spawn_egg", SHEEP_CHICKEN_SPAWN_EGG);
+        registerItem("lorax_spawn_egg", LORAX_SPAWN_EGG);
+        registerItem("lorax_moustache", LORAX_MOUSTACHE);
     }
 
 }

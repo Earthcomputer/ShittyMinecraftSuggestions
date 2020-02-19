@@ -24,6 +24,11 @@ public class ModSounds {
     public static final SoundEvent SHEEP_HIT = registerSound("sheephit");
     public static final SoundEvent DEATH_BY_FALL = registerSound("deathbyfall");
 
+    public static final SoundEvent ENTITY_LORAX_AMBIENT = registerSound("entity.shittymcsuggestions.lorax.ambient");
+    public static final SoundEvent ENTITY_LORAX_HURT = registerSound("entity.shittymcsuggestions.lorax.hurt");
+    public static final SoundEvent ENTITY_LORAX_DEATH = registerSound("entity.shittymcsuggestions.lorax.death");
+    public static final SoundEvent ENTITY_LORAX_STEP = registerSound("entity.shittymcsuggestions.lorax.step");
+
     public static final BlockSoundGroup BEANOS_BLOCK_SOUND = new BlockSoundGroup(1, 1,
             BlockSoundGroup.STONE.getBreakSound(),
             BEANOS_BLOCK,

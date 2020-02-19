@@ -26,6 +26,9 @@ public class ModEntities {
     public static final EntityType<SheepChickenEntity> SHEEP_CHICKEN = FabricEntityTypeBuilder.create(EntityCategory.CREATURE, SheepChickenEntity::new)
             .size(EntityType.CHICKEN.getDimensions())
             .build();
+    public static final EntityType<LoraxEntity> LORAX = FabricEntityTypeBuilder.create(EntityCategory.MONSTER, LoraxEntity::new)
+            .size(EntityDimensions.fixed(0.6f, 1f))
+            .build();
 
     private static void registerEntity(String name, EntityType<?> entity) {
         Registry.register(Registry.ENTITY_TYPE, new Identifier(ShittyMinecraftSuggestions.MODID, name), entity);
@@ -37,6 +40,7 @@ public class ModEntities {
         registerEntity("cow_pig", COW_PIG);
         registerEntity("pig_cow", PIG_COW);
         registerEntity("sheep_chicken", SHEEP_CHICKEN);
+        registerEntity("lorax", LORAX);
     }
 
 }

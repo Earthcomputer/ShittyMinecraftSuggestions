@@ -5,7 +5,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.stat.Stats;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -17,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import shittymcsuggestions.ModSounds;
 import shittymcsuggestions.block.ModBlocks;
 import shittymcsuggestions.block.UnlitTorchBlock;
+import shittymcsuggestions.entity.LoraxEntity;
 import shittymcsuggestions.entity.ModDamageSource;
 import shittymcsuggestions.item.ModItems;
 
@@ -59,6 +63,16 @@ public class MixinBlock {
         }
         if (!world.isClient && player.getMainHandStack().isEmpty()) {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 100, 2));
+        }
+        if (!world.isClient && BlockTags.LOGS.contains((Block) (Object) this)) {
+            ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
+            int totalLogsMined = 0;
+            for (Block block : BlockTags.LOGS.values()) {
+                totalLogsMined += serverPlayer.getStatHandler().getStat(Stats.MINED, block);
+            }
+            if (totalLogsMined % 100 == 0) {
+                LoraxEntity.spawnLorax(world, player, world.random);
+            }
         }
     }
 

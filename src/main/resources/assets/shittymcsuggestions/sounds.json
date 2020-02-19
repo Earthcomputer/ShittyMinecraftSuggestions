@@ -104,5 +104,36 @@
     "sounds": [
       "shittymcsuggestions:deathbyfall"
     ]
+  },
+  "entity.shittymcsuggestions.lorax.ambient": {
+    "subtitle": "subtitle.entity.shittymcsuggestions.lorax.ambient",
+    "sounds": [
+      "shittymcsuggestions:diduchoptree",
+      "shittymcsuggestions:leave"
+    ]
+  },
+  "entity.shittymcsuggestions.lorax.hurt": {
+    "subtitle": "subtitle.entity.shittymcsuggestions.lorax.hurt",
+    "sounds": [
+      "shittymcsuggestions:grunt"
+    ]
+  },
+  "entity.shittymcsuggestions.lorax.death": {
+    "subtitle": "subtitle.entity.shittymcsuggestions.lorax.death",
+    "sounds": [
+      {
+        "name": "shittymcsuggestions:grunt",
+        "pitch": 2
+      }
+    ]
+  },
+  "entity.shittymcsuggestions.lorax.step": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.grass.step",
+        "volume": 5
+      }
+    ]
   }
 }
