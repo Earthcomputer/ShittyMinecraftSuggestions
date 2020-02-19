@@ -33,18 +33,22 @@ public class LoraxEntity extends ZombieEntity {
         return false;
     }
 
+    @Override
     protected SoundEvent getAmbientSound() {
         return ModSounds.ENTITY_LORAX_AMBIENT;
     }
 
+    @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
         return ModSounds.ENTITY_LORAX_HURT;
     }
 
+    @Override
     protected SoundEvent getDeathSound() {
         return ModSounds.ENTITY_LORAX_DEATH;
     }
 
+    @Override
     protected SoundEvent getStepSound() {
         return ModSounds.ENTITY_LORAX_STEP;
     }
