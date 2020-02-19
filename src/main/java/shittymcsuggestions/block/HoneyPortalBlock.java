@@ -7,6 +7,6 @@ import java.util.Collections;
 public class HoneyPortalBlock extends NetherPortalLikeBlock {
 
     public HoneyPortalBlock(Settings settings) {
-        super(Blocks.HONEYCOMB_BLOCK, Collections.singleton(Blocks.FIRE), settings);
+        super(ModBlocks.COMPACTED_HONEYCOMB_BLOCK, Collections.singleton(Blocks.FIRE), settings);
     }
 }

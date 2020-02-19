@@ -49,6 +49,11 @@ public class ModBlocks {
             .lightLevel(11)
             .dropsNothing()
             .build());
+    public static final Block COMPACTED_HONEYCOMB_BLOCK = new Block(FabricBlockSettings.of(Material.CLAY, MaterialColor.ORANGE)
+            .strength(1f, 1f)
+            .sounds(BlockSoundGroup.CORAL)
+            .breakByTool(FabricToolTags.PICKAXES)
+            .build());
     public static final HoneyPortalBlock HONEY_PORTAL = new HoneyPortalBlock(FabricBlockSettings.of(Material.PORTAL)
             .noCollision()
             .strength(-1.0f, -1.0f)
@@ -81,6 +86,7 @@ public class ModBlocks {
         registerBlock("grasshopper", GRASSHOPPER, ItemGroup.REDSTONE);
         registerBlock("thicc_torch", THICC_TORCH, ItemGroup.DECORATIONS);
         registerBlock("aether_portal", AETHER_PORTAL, null);
+        registerBlock("compacted_honeycomb_block", COMPACTED_HONEYCOMB_BLOCK, ItemGroup.DECORATIONS);
         registerBlock("honey_portal", HONEY_PORTAL, null);
         registerBlock("bedrock_piston", BEDROCK_PISTON, ItemGroup.REDSTONE);
         registerBlock("bedrock_piston_head", BEDROCK_PISTON_HEAD, null);
