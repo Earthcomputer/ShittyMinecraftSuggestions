@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import shittymcsuggestions.block.AetherPortalBlock;
 import shittymcsuggestions.block.DragonEggBlockBlock;
+import shittymcsuggestions.block.ModBlocks;
 
 @Mixin(FireBlock.class)
 public class MixinFireBlock {
@@ -17,6 +18,8 @@ public class MixinFireBlock {
     @Inject(method = "onBlockAdded", at = @At("HEAD"), cancellable = true)
     private void onOnBlockAdded(BlockState blockState, World world, BlockPos blockPos, BlockState blockState2, boolean bl, CallbackInfo ci) {
         if (DragonEggBlockBlock.createPortal(world, blockPos))
+            ci.cancel();
+        else if (ModBlocks.HONEY_PORTAL.createPortalAt(world, blockPos))
             ci.cancel();
     }
 

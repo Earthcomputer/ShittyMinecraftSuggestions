@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"axis=x": {
+			"model": "shittymcsuggestions:block/honey_portal_ns"
+		},
+		"axis=z": {
+			"model": "shittymcsuggestions:block/honey_portal_ew"
+		}
+	}
+}

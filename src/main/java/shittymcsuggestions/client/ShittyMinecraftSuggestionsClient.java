@@ -24,6 +24,7 @@ public class ShittyMinecraftSuggestionsClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.UNLIT_TORCH, ModBlocks.UNLIT_WALL_TORCH);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.AETHER_PORTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HONEY_PORTAL, RenderLayer.getTranslucent());
     }
 
 }

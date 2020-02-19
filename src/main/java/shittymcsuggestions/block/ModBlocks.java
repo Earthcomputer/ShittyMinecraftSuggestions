@@ -42,11 +42,18 @@ public class ModBlocks {
             .lightLevel(15)
             .nonOpaque()
             .build());
-    public static final Block AETHER_PORTAL = new AetherPortalBlock(FabricBlockSettings.of(Material.PORTAL)
+    public static final AetherPortalBlock AETHER_PORTAL = new AetherPortalBlock(FabricBlockSettings.of(Material.PORTAL)
             .noCollision()
             .strength(-1.0f, -1.0f)
             .sounds(BlockSoundGroup.GLASS)
             .lightLevel(11)
+            .dropsNothing()
+            .build());
+    public static final HoneyPortalBlock HONEY_PORTAL = new HoneyPortalBlock(FabricBlockSettings.of(Material.PORTAL)
+            .noCollision()
+            .strength(-1.0f, -1.0f)
+            .sounds(BlockSoundGroup.GLASS)
+            .lightLevel(8)
             .dropsNothing()
             .build());
     public static final PistonBlock BEDROCK_PISTON = new BedrockPistonBlock(false, FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
@@ -74,6 +81,7 @@ public class ModBlocks {
         registerBlock("grasshopper", GRASSHOPPER, ItemGroup.REDSTONE);
         registerBlock("thicc_torch", THICC_TORCH, ItemGroup.DECORATIONS);
         registerBlock("aether_portal", AETHER_PORTAL, null);
+        registerBlock("honey_portal", HONEY_PORTAL, null);
         registerBlock("bedrock_piston", BEDROCK_PISTON, ItemGroup.REDSTONE);
         registerBlock("bedrock_piston_head", BEDROCK_PISTON_HEAD, null);
     }
