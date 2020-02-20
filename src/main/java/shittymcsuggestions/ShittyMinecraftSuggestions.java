@@ -10,6 +10,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import shittymcsuggestions.block.ModBlocks;
 import shittymcsuggestions.criterion.ModCriterions;
+import shittymcsuggestions.dimension.ModDimensions;
 import shittymcsuggestions.enchantment.ModEnchantments;
 import shittymcsuggestions.entity.ModEntities;
 import shittymcsuggestions.item.ModItems;
@@ -33,6 +34,7 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ModEnchantments.register();
 		ModStatusEffects.register();
 		ModCriterions.register();
+		ModDimensions.register();
 
 		ShearHandler.reigsterEvent();
 

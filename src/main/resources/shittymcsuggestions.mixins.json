@@ -11,6 +11,7 @@
     "MixinCraftingResultSlot",
     "MixinDamageSourcePredicate",
     "MixinDonkeyEntity",
+    "MixinEntity",
     "MixinFireBlock",
     "MixinFishEntity",
     "MixinHopperBlockEntity",

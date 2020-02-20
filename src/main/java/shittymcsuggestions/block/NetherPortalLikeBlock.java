@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 import java.util.Random;
 import java.util.Set;
 
-public class NetherPortalLikeBlock extends NetherPortalBlock {
+public abstract class NetherPortalLikeBlock extends NetherPortalBlock implements ICustomPortal {
 
     private final Block frameBlock;
     private final Set<Block> replaceableBlocks;
@@ -84,7 +84,7 @@ public class NetherPortalLikeBlock extends NetherPortalBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals()) {
+        if (!world.isClient && !entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals()) {
             onEntityInPortal(world, pos, state, entity);
         }
     }
