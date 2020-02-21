@@ -1,8 +1,8 @@
 package shittymcsuggestions.mixin;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.BaseFluid;
 import net.minecraft.fluid.Fluid;
-import net.minecraft.fluid.WaterFluid;
 import net.minecraft.item.BucketItem;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -23,11 +23,10 @@ public class MixinBucketItem {
 
     @Inject(method = "placeFluid", at = @At("HEAD"), cancellable = true)
     private void onPlaceFluid(PlayerEntity player, World world, BlockPos pos ,BlockHitResult hitResult, CallbackInfoReturnable<Boolean> ci) {
-        if (!(this.fluid instanceof WaterFluid)) {
-            ci.setReturnValue(false);
-        }
-        if (ModBlocks.AETHER_PORTAL.createPortalAt(world, pos)) {
-            ci.setReturnValue(true);
+        if ((this.fluid instanceof BaseFluid)) {
+            if (ModBlocks.AETHER_PORTAL.createPortalAt(world, pos)) {
+                ci.setReturnValue(true);
+            }
         }
     }
 }
