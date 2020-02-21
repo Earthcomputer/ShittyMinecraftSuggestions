@@ -14,18 +14,18 @@ public class MixinEntityTracker {
 
     @Unique private ThreadLocal<Entity> entityInstnace = new ThreadLocal<>();
 
-    @ModifyVariable(method = "getMaxTrackDistance", at = @At(value = "STORE", ordinal = 0))
+    @ModifyVariable(method = "getMaxTrackDistance()I", at = @At(value = "STORE", ordinal = 0))
     private Entity captureEntityInstance(Entity instance) {
         entityInstnace.set(instance);
         return instance;
     }
 
-    @ModifyVariable(method = "getMaxTrackDistance", ordinal = 1, at = @At(value = "STORE", ordinal = 0))
+    @ModifyVariable(method = "getMaxTrackDistance()I", ordinal = 1, at = @At(value = "STORE", ordinal = 0))
     private int modifyTrackingDistance(int oldDistance) {
         return ModEntities.getTrackingDistance(entityInstnace.get(), oldDistance);
     }
 
-    @Inject(method = "getMaxTrackDistance", at = @At("RETURN"))
+    @Inject(method = "getMaxTrackDistance()I", at = @At("RETURN"))
     private void postGetMaxTrackDistance(CallbackInfoReturnable<Integer> ci) {
         entityInstnace.set(null);
     }
