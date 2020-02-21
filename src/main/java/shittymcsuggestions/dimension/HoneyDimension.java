@@ -1,5 +1,6 @@
 package shittymcsuggestions.dimension;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
@@ -17,28 +18,29 @@ public class HoneyDimension extends Dimension {
     private static final Vec3d FOG_COLOR = new Vec3d(0.54, 0.44, 0.16);
 
     public HoneyDimension(World world, DimensionType type) {
-        super(world, type, 0.2f);
+        super(world, type, 0.5f);
     }
 
     @Override
     public ChunkGenerator<?> createChunkGenerator() {
         CavesChunkGeneratorConfig config = ModChunkGenerators.HONEY.createSettings();
+        config.setDefaultBlock(Blocks.HONEYCOMB_BLOCK.getDefaultState());
         FixedBiomeSourceConfig biomeConfig = BiomeSourceType.FIXED.getConfig(world.getLevelProperties()).setBiome(ModBiomes.BEE);
         return ModChunkGenerators.HONEY.create(world, BiomeSourceType.FIXED.applyConfig(biomeConfig), config);
     }
 
     @Override
-    public BlockPos getSpawningBlockInChunk(ChunkPos chunkPos, boolean bl) {
+    public BlockPos getSpawningBlockInChunk(ChunkPos chunkPos, boolean checkMobSpawnValidity) {
         return null;
     }
 
     @Override
-    public BlockPos getTopSpawningBlockPosition(int i, int j, boolean bl) {
+    public BlockPos getTopSpawningBlockPosition(int x, int z, boolean checkMobSpawnValidity) {
         return null;
     }
 
     @Override
-    public float getSkyAngle(long l, float f) {
+    public float getSkyAngle(long worldTime, float tickDelta) {
         return 0.5f;
     }
 
@@ -48,7 +50,7 @@ public class HoneyDimension extends Dimension {
     }
 
     @Override
-    public Vec3d getFogColor(float f, float g) {
+    public Vec3d getFogColor(float skyAngle, float tickDelta) {
         return FOG_COLOR;
     }
 
@@ -58,7 +60,7 @@ public class HoneyDimension extends Dimension {
     }
 
     @Override
-    public boolean isFogThick(int i, int j) {
+    public boolean isFogThick(int x, int z) {
         return false;
     }
 

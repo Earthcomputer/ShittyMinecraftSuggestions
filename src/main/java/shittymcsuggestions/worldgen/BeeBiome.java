@@ -5,6 +5,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.ProbabilityConfig;
+import net.minecraft.world.gen.decorator.Decorator;
+import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 
 public class BeeBiome extends Biome {
     protected BeeBiome() {
@@ -21,6 +23,7 @@ public class BeeBiome extends Biome {
                 .parent(null));
 
         addCarver(GenerationStep.Carver.AIR, configureCarver(ModCarvers.BEE_CAVE, new ProbabilityConfig(0.2f)));
+        addFeature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModFeatures.THICC_TORCH_FEATURE.configure(ModFeatures.THICC_TORCH_CONFIG).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(3, 0, 0, 256))));
         addSpawn(EntityCategory.CREATURE, new Biome.SpawnEntry(EntityType.BEE, 10, 1, 3));
     }
 }
