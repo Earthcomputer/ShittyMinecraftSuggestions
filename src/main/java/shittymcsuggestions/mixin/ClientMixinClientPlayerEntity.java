@@ -37,7 +37,7 @@ public class ClientMixinClientPlayerEntity extends AbstractClientPlayerEntity {
         if (getVelocity().y > 0)
             ticksSinceUpwardVelocity = 0;
 
-        if (chinaTicks >= 11 && ticksSinceUpwardVelocity > 30) {
+        if (chinaTicks >= 11 && ticksSinceUpwardVelocity > 30 && getY() < world.getSeaLevel()) {
             if (!hasReachedChinaVelocity) {
                 hasReachedChinaVelocity = true;
                 world.playSoundFromEntity(this, this, ModSounds.CHINA, SoundCategory.PLAYERS, 1, 1);
