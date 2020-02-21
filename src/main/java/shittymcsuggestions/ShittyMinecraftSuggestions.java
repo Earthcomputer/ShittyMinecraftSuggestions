@@ -20,6 +20,9 @@ import shittymcsuggestions.mixin.BlockEntityTypeAccessor;
 import shittymcsuggestions.mixin.ItemAccessor;
 import shittymcsuggestions.mixin.SpawnEggItemAccessor;
 import shittymcsuggestions.statuseffects.ModStatusEffects;
+import shittymcsuggestions.worldgen.ModBiomes;
+import shittymcsuggestions.worldgen.ModCarvers;
+import shittymcsuggestions.worldgen.ModSurfaceBuilders;
 
 public class ShittyMinecraftSuggestions implements ModInitializer {
 
@@ -35,6 +38,9 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ModStatusEffects.register();
 		ModCriterions.register();
 		ModDimensions.register();
+		ModSurfaceBuilders.register();
+		ModCarvers.register();
+		ModBiomes.register();
 
 		ShearHandler.reigsterEvent();
 

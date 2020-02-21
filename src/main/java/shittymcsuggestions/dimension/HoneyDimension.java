@@ -4,28 +4,27 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.source.BiomeSourceType;
 import net.minecraft.world.biome.source.FixedBiomeSourceConfig;
 import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.gen.chunk.CavesChunkGeneratorConfig;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
-import net.minecraft.world.gen.chunk.ChunkGeneratorType;
-import net.minecraft.world.gen.chunk.FlatChunkGeneratorConfig;
+import shittymcsuggestions.worldgen.ModBiomes;
 
 public class HoneyDimension extends Dimension {
 
     private static final Vec3d FOG_COLOR = new Vec3d(0.54, 0.44, 0.16);
 
     public HoneyDimension(World world, DimensionType type) {
-        super(world, type, 0.1f);
+        super(world, type, 0.2f);
     }
 
     @Override
     public ChunkGenerator<?> createChunkGenerator() {
-        FlatChunkGeneratorConfig config = FlatChunkGeneratorConfig.getDefaultConfig();
-        FixedBiomeSourceConfig biomeConfig = BiomeSourceType.FIXED.getConfig(world.getLevelProperties()).setBiome(Biomes.JUNGLE);
-        return ChunkGeneratorType.FLAT.create(world, BiomeSourceType.FIXED.applyConfig(biomeConfig), config);
+        CavesChunkGeneratorConfig config = ModChunkGenerators.HONEY.createSettings();
+        FixedBiomeSourceConfig biomeConfig = BiomeSourceType.FIXED.getConfig(world.getLevelProperties()).setBiome(ModBiomes.BEE);
+        return ModChunkGenerators.HONEY.create(world, BiomeSourceType.FIXED.applyConfig(biomeConfig), config);
     }
 
     @Override
