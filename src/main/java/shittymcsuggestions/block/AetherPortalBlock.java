@@ -26,7 +26,7 @@ public class AetherPortalBlock extends NetherPortalLikeBlock {
     public void teleportEntity(Entity entity) {
         entity.teleport(entity.getX(),2000, entity.getZ());
         if (entity instanceof LivingEntity) {
-            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING,1200));
+            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING,1200, 1));
         }
     }
 }
