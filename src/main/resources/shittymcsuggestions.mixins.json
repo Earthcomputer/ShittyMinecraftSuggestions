@@ -35,12 +35,14 @@
     "BlockAccessor",
     "BlockEntityTypeAccessor",
     "CarverAccessor",
+    "CavesChunkGeneratorAccessor",
     "CriterionsAccessor",
     "GoalSelectorAccessor",
     "ItemAccessor",
     "ItemUsageContextAccessor",
     "LivingEntityAccessor",
     "SpawnEggItemAccessor",
+    "SurfaceChunkGeneratorAccessor",
     "WeightedPickerEntryAccessor"
   ],
   "client": [

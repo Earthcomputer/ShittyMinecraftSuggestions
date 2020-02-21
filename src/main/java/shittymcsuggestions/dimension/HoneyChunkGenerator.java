@@ -17,6 +17,8 @@ import net.minecraft.world.gen.ChunkRandom;
 import net.minecraft.world.gen.chunk.CavesChunkGenerator;
 import net.minecraft.world.gen.chunk.CavesChunkGeneratorConfig;
 import org.apache.logging.log4j.LogManager;
+import shittymcsuggestions.mixin.CavesChunkGeneratorAccessor;
+import shittymcsuggestions.mixin.SurfaceChunkGeneratorAccessor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,9 @@ public class HoneyChunkGenerator extends CavesChunkGenerator {
 
     public HoneyChunkGenerator(World world, BiomeSource biomeSource, CavesChunkGeneratorConfig config) {
         super(world, biomeSource, config);
+        // minus 1 because the getter adds 1
+        ((SurfaceChunkGeneratorAccessor) this).setNoiseSizeY((getNoiseSizeY() - 1) * 2);
+        ((CavesChunkGeneratorAccessor) this).setNoiseFalloff(((CavesChunkGeneratorAccessor) this).callBuildNoiseFalloff());
     }
 
     @Override
