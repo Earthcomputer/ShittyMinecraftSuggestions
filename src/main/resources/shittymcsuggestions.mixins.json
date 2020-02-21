@@ -13,6 +13,7 @@
     "MixinDamageSourcePredicate",
     "MixinDonkeyEntity",
     "MixinEntity",
+    "MixinEntityTracker",
     "MixinFireBlock",
     "MixinFishEntity",
     "MixinHopperBlockEntity",
@@ -28,6 +29,7 @@
     "MixinServerStatHandler",
     "MixinSheepEntity",
     "MixinSpawnHelper",
+    "MixinThreadedAnvilChunkStorage",
     "MixinWallBlock",
 
     "BlockAccessor",
@@ -42,6 +44,7 @@
     "WeightedPickerEntryAccessor"
   ],
   "client": [
+    "ClientMixinBeeEntity",
     "ClientMixinBeeEntityRenderer",
     "ClientMixinClientPlayerEntity",
     "ClientMixinCreeperEntity",

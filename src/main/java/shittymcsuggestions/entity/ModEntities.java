@@ -1,13 +1,15 @@
 package shittymcsuggestions.entity;
 
 import net.fabricmc.fabric.api.entity.FabricEntityTypeBuilder;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import shittymcsuggestions.ShittyMinecraftSuggestions;
+import shittymcsuggestions.dimension.ModDimensions;
 
 public class ModEntities {
 
@@ -41,6 +43,14 @@ public class ModEntities {
         registerEntity("pig_cow", PIG_COW);
         registerEntity("sheep_chicken", SHEEP_CHICKEN);
         registerEntity("lorax", LORAX);
+    }
+
+    public static int getTrackingDistance(Entity entity, int oldDistance) {
+        if (entity instanceof BeeEntity && entity.dimension == ModDimensions.BEE) {
+            return oldDistance * 2;
+        }
+
+        return oldDistance;
     }
 
 }
