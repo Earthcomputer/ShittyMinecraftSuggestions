@@ -1,5 +1,7 @@
 package shittymcsuggestions.item;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -28,6 +30,7 @@ public class ModItems {
     public static final Item SHEEP_CHICKEN_SPAWN_EGG = new SpawnEggItem(ModEntities.SHEEP_CHICKEN, 0xff0000, 0xa1a1a1, new Item.Settings().group(ItemGroup.MISC));
     public static final Item LORAX_SPAWN_EGG = new SpawnEggItem(ModEntities.LORAX, 0xff7d00, 0xfef364, new Item.Settings().group(ItemGroup.MISC));
     public static final Item LORAX_MOUSTACHE = new Item(new Item.Settings().group(ItemGroup.MISC));
+    public static final Item CHICKEN_BUCKET = new EntityBucketItem(EntityType.CHICKEN, Fluids.EMPTY, (new Item.Settings()).maxCount(1).group(ItemGroup.MISC));
 
     private static void registerItem(String name, Item item) {
         Registry.register(Registry.ITEM, new Identifier(ShittyMinecraftSuggestions.MODID, name), item);
@@ -50,6 +53,7 @@ public class ModItems {
         registerItem("sheep_chicken_spawn_egg", SHEEP_CHICKEN_SPAWN_EGG);
         registerItem("lorax_spawn_egg", LORAX_SPAWN_EGG);
         registerItem("lorax_moustache", LORAX_MOUSTACHE);
+        registerItem("chicken_bucket", CHICKEN_BUCKET);
     }
 
 }

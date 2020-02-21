@@ -8,6 +8,7 @@
     "MixinAnimalMateGoal",
     "MixinBlock",
     "MixinBucketItem",
+    "MixinChickenEntity",
     "MixinCraftingResultSlot",
     "MixinDamageSourcePredicate",
     "MixinDonkeyEntity",
