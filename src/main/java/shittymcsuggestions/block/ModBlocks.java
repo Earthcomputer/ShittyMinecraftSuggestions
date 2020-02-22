@@ -68,6 +68,11 @@ public class ModBlocks {
             .strength(-1f, 3600000f)
             .dropsNothing()
             .build());
+    public static final Block COMPRESSED_HONEY = new Block(FabricBlockSettings.of(Material.CLAY, MaterialColor.ORANGE)
+            .strength(0.6f, 0.6f)
+            .sounds(BlockSoundGroup.HONEY)
+            .breakByTool(FabricToolTags.PICKAXES)
+            .build());
 
     private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);
@@ -90,6 +95,7 @@ public class ModBlocks {
         registerBlock("honey_portal", HONEY_PORTAL, null);
         registerBlock("bedrock_piston", BEDROCK_PISTON, ItemGroup.REDSTONE);
         registerBlock("bedrock_piston_head", BEDROCK_PISTON_HEAD, null);
+        registerBlock("compressed_honey", COMPRESSED_HONEY, ItemGroup.DECORATIONS);
     }
 
 }

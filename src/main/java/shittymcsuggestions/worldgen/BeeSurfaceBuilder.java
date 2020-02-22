@@ -10,6 +10,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.ChunkRandom;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilder.TernarySurfaceConfig;
+import shittymcsuggestions.block.ModBlocks;
 
 import java.util.Random;
 import java.util.function.Function;
@@ -19,6 +20,7 @@ public class BeeSurfaceBuilder extends SurfaceBuilder<TernarySurfaceConfig> {
     private static final BlockState CAVE_AIR = Blocks.CAVE_AIR.getDefaultState();
     private static final BlockState HONEYCOMB_BLOCK = Blocks.HONEYCOMB_BLOCK.getDefaultState();
     private static final BlockState HONEY_BLOCK = Blocks.HONEY_BLOCK.getDefaultState();
+    private static final BlockState COMPRESSED_HONEY = ModBlocks.COMPRESSED_HONEY.getDefaultState();
     private long seed;
     private OctavePerlinNoiseSampler beachNoise;
 
@@ -69,7 +71,7 @@ public class BeeSurfaceBuilder extends SurfaceBuilder<TernarySurfaceConfig> {
                             bottomSurfaceBlock = HONEYCOMB_BLOCK;
                             if (isBeach) {
                                 topSurfaceBlock = HONEY_BLOCK;
-                                bottomSurfaceBlock = HONEY_BLOCK;
+                                bottomSurfaceBlock = COMPRESSED_HONEY;
                             }
                         }
 
