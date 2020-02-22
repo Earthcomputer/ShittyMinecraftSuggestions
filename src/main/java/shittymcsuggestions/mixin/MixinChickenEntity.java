@@ -11,6 +11,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import org.apache.logging.log4j.core.jmx.Server;
 import org.spongepowered.asm.mixin.Mixin;
 import shittymcsuggestions.item.ModItems;
 
@@ -22,19 +23,22 @@ public abstract class MixinChickenEntity extends AnimalEntity {
 
     @Override
     public boolean interactMob(PlayerEntity player, Hand hand) {
-        if (this.getType() == EntityType.CHICKEN) {
+        if (!this.isBaby()) {
             ItemStack playerHand = player.getStackInHand(hand);
             if (playerHand.getItem() == Items.BUCKET && this.isAlive()) {
                 this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, 1.0F);
                 playerHand.decrement(1);
-                ItemStack itemStack2 = new ItemStack(ModItems.CHICKEN_BUCKET);
+                ItemStack chickenBucketItem = new ItemStack(ModItems.CHICKEN_BUCKET);
+                if (this.hasCustomName()) {
+                    chickenBucketItem.setCustomName(this.getCustomName());
+                }
                 if (!this.world.isClient) {
-                    Criterions.FILLED_BUCKET.trigger((ServerPlayerEntity) player, itemStack2);
+                    Criterions.FILLED_BUCKET.trigger((ServerPlayerEntity) player, chickenBucketItem);
                 }
                 if (playerHand.isEmpty()) {
-                    player.setStackInHand(hand, itemStack2);
-                } else if (!player.inventory.insertStack(itemStack2)) {
-                    player.dropItem(itemStack2, false);
+                    player.setStackInHand(hand, chickenBucketItem);
+                } else if (!player.inventory.insertStack(chickenBucketItem)) {
+                    player.dropItem(chickenBucketItem, false);
                 }
 
                 this.remove();
