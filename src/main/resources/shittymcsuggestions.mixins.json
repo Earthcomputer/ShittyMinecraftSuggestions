@@ -50,6 +50,7 @@
     "ItemAccessor",
     "ItemUsageContextAccessor",
     "LivingEntityAccessor",
+    "LocateCommandAccessor",
     "SpawnEggItemAccessor",
     "SurfaceChunkGeneratorAccessor",
     "WeightedPickerEntryAccessor"
