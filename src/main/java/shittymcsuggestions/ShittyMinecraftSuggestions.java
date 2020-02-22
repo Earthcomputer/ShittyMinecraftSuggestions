@@ -9,6 +9,7 @@ import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import shittymcsuggestions.block.ModBlocks;
+import shittymcsuggestions.block.ModFluids;
 import shittymcsuggestions.criterion.ModCriterions;
 import shittymcsuggestions.dimension.ModDimensions;
 import shittymcsuggestions.enchantment.ModEnchantments;
@@ -33,6 +34,7 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 	public void onInitialize() {
 		ModBlocks.register();
 		ModItems.register();
+		ModFluids.register();
 		ModEntities.register();
 		ModSounds.register();
 		ModEnchantments.register();

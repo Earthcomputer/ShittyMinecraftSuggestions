@@ -11,6 +11,7 @@ import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.chunk.CavesChunkGeneratorConfig;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
+import shittymcsuggestions.block.ModBlocks;
 import shittymcsuggestions.worldgen.ModBiomes;
 
 public class HoneyDimension extends Dimension {
@@ -25,6 +26,7 @@ public class HoneyDimension extends Dimension {
     public ChunkGenerator<?> createChunkGenerator() {
         CavesChunkGeneratorConfig config = ModChunkGenerators.HONEY.createSettings();
         config.setDefaultBlock(Blocks.HONEYCOMB_BLOCK.getDefaultState());
+        config.setDefaultFluid(ModBlocks.HONEY.getDefaultState());
         FixedBiomeSourceConfig biomeConfig = BiomeSourceType.FIXED.getConfig(world.getLevelProperties()).setBiome(ModBiomes.BEE);
         return ModChunkGenerators.HONEY.create(world, BiomeSourceType.FIXED.applyConfig(biomeConfig), config);
     }

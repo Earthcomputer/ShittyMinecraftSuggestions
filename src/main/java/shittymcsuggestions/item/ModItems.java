@@ -7,6 +7,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import shittymcsuggestions.ShittyMinecraftSuggestions;
 import shittymcsuggestions.block.ModBlocks;
+import shittymcsuggestions.block.ModFluids;
 import shittymcsuggestions.entity.ModEntities;
 
 public class ModItems {
@@ -31,6 +32,7 @@ public class ModItems {
     public static final Item LORAX_SPAWN_EGG = new SpawnEggItem(ModEntities.LORAX, 0xff7d00, 0xfef364, new Item.Settings().group(ItemGroup.MISC));
     public static final Item LORAX_MOUSTACHE = new Item(new Item.Settings().group(ItemGroup.MISC));
     public static final Item CHICKEN_BUCKET = new EntityBucketItem(EntityType.CHICKEN, Fluids.EMPTY, (new Item.Settings()).maxCount(1).group(ItemGroup.MISC));
+    public static final Item HONEY_BUCKET = new BucketItem(ModFluids.HONEY, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1).group(ItemGroup.MISC));
 
     private static void registerItem(String name, Item item) {
         Registry.register(Registry.ITEM, new Identifier(ShittyMinecraftSuggestions.MODID, name), item);
@@ -54,6 +56,7 @@ public class ModItems {
         registerItem("lorax_spawn_egg", LORAX_SPAWN_EGG);
         registerItem("lorax_moustache", LORAX_MOUSTACHE);
         registerItem("chicken_bucket", CHICKEN_BUCKET);
+        registerItem("honey_bucket", HONEY_BUCKET);
     }
 
 }

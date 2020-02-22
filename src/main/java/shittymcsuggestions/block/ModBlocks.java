@@ -73,6 +73,7 @@ public class ModBlocks {
             .sounds(BlockSoundGroup.HONEY)
             .breakByTool(FabricToolTags.PICKAXES)
             .build());
+    public static final Block HONEY = new ModFluidBlock(ModFluids.HONEY, FabricBlockSettings.copy(Blocks.WATER).build());
 
     private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);
@@ -96,6 +97,7 @@ public class ModBlocks {
         registerBlock("bedrock_piston", BEDROCK_PISTON, ItemGroup.REDSTONE);
         registerBlock("bedrock_piston_head", BEDROCK_PISTON_HEAD, null);
         registerBlock("compressed_honey", COMPRESSED_HONEY, ItemGroup.DECORATIONS);
+        registerBlock("honey", HONEY, null);
     }
 
 }
