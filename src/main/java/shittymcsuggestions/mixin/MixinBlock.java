@@ -12,6 +12,7 @@ import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -61,10 +62,13 @@ public class MixinBlock {
         if (!world.isClient && (Object) this instanceof AbstractGlassBlock && player.getMainHandStack().isEmpty()) {
             player.damage(ModDamageSource.GLASS, 2);
         }
-        if (!world.isClient && player.getMainHandStack().isEmpty()) {
+        if (!world.isClient && player.getMainHandStack().isEmpty() && !player.abilities.creativeMode) {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 100, 2));
         }
-        if (!world.isClient && BlockTags.LOGS.contains((Block) (Object) this)) {
+        if (!world.isClient
+                && BlockTags.LOGS.contains((Block) (Object) this)
+                && !player.abilities.creativeMode
+                && world.dimension.getType() == DimensionType.OVERWORLD) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
             int totalLogsMined = 0;
             for (Block block : BlockTags.LOGS.values()) {
