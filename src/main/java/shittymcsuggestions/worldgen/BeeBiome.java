@@ -3,6 +3,7 @@ package shittymcsuggestions.worldgen;
 import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.ProbabilityConfig;
 import net.minecraft.world.gen.decorator.Decorator;
@@ -27,5 +28,15 @@ public class BeeBiome extends Biome {
         addFeature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModFeatures.THICC_TORCH_FEATURE.configure(ModFeatures.THICC_TORCH_CONFIG).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(3, 0, 0, 256))));
         addFeature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModFeatures.CUSTOM_ORE_FEATURE.configure(new CustomOreFeatureConfig(CustomOreFeatureConfig.CustomTarget.HONEYCOMB, ModBlocks.COMPACTED_HONEYCOMB_BLOCK.getDefaultState(), 14)).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(32, 10, 20, 256))));
         addSpawn(EntityCategory.CREATURE, new Biome.SpawnEntry(EntityType.BEE, 10, 1, 3));
+    }
+
+    @Override
+    public int getGrassColorAt(double x, double z) {
+        return Biomes.JUNGLE.getGrassColorAt(x, z);
+    }
+
+    @Override
+    public int getFoliageColor() {
+        return Biomes.JUNGLE.getFoliageColor();
     }
 }
