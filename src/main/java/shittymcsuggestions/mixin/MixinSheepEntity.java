@@ -72,8 +72,10 @@ public abstract class MixinSheepEntity extends AnimalEntity implements ISheep {
 
     @Inject(method = "interactMob", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;damage(ILnet/minecraft/entity/LivingEntity;Ljava/util/function/Consumer;)V"))
     private void onSheared(PlayerEntity player, Hand hand, CallbackInfoReturnable<Boolean> ci) {
-        setAttacker(player);
-        sms_setAngry(true);
+        if (!player.abilities.creativeMode) {
+            setAttacker(player);
+            sms_setAngry(true);
+        }
     }
 
     @Inject(method = "initAttributes", at = @At("RETURN"))

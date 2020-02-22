@@ -72,7 +72,7 @@ public class MixinBlock {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
             int totalLogsMined = 0;
             for (Block block : BlockTags.LOGS.values()) {
-                totalLogsMined += serverPlayer.getStatHandler().getStat(Stats.MINED, block);
+                totalLogsMined += serverPlayer.getStatHandler().getStat(Stats.MINED.getOrCreateStat(block));
             }
             if (totalLogsMined % 100 == 0) {
                 LoraxEntity.spawnLorax(world, player, world.random);

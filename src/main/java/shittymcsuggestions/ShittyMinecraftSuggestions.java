@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import shittymcsuggestions.block.ModBlocks;
 import shittymcsuggestions.block.ModFluids;
 import shittymcsuggestions.criterion.ModCriterions;
+import shittymcsuggestions.dimension.ModChunkGenerators;
 import shittymcsuggestions.dimension.ModDimensions;
 import shittymcsuggestions.enchantment.ModEnchantments;
 import shittymcsuggestions.entity.ModEntities;
@@ -41,6 +42,7 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ModStatusEffects.register();
 		ModCriterions.register();
 		ModDimensions.register();
+		ModChunkGenerators.register();
 		ModSurfaceBuilders.register();
 		ModCarvers.register();
 		ModBiomes.register();

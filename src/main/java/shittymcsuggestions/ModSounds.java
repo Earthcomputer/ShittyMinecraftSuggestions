@@ -4,6 +4,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import shittymcsuggestions.mixin.BlockSoundGroupAccessor;
 
 public class ModSounds {
 
@@ -30,10 +31,10 @@ public class ModSounds {
     public static final SoundEvent ENTITY_LORAX_STEP = registerSound("entity.shittymcsuggestions.lorax.step");
 
     public static final BlockSoundGroup BEANOS_BLOCK_SOUND = new BlockSoundGroup(1, 1,
-            BlockSoundGroup.STONE.getBreakSound(),
+            ((BlockSoundGroupAccessor) BlockSoundGroup.STONE).sms_getBreakSound(),
             BEANOS_BLOCK,
             BlockSoundGroup.STONE.getPlaceSound(),
-            BlockSoundGroup.STONE.getHitSound(),
+            ((BlockSoundGroupAccessor) BlockSoundGroup.STONE).sms_getHitSound(),
             BEANOS_BLOCK);
 
     private static SoundEvent registerSound(String name) {
