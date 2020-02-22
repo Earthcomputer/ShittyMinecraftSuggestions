@@ -19,7 +19,7 @@ public class HoneyDimension extends Dimension {
     private static final Vec3d FOG_COLOR = new Vec3d(0.54, 0.44, 0.16);
 
     public HoneyDimension(World world, DimensionType type) {
-        super(world, type, 0.5f);
+        super(world, type, 0.2f);
     }
 
     @Override
