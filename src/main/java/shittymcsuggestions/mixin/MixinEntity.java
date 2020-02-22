@@ -7,6 +7,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,7 +24,10 @@ import java.util.Map;
 @Mixin(Entity.class)
 public class MixinEntity implements IEntity {
 
+    @Shadow public float fallDistance;
+
     @Unique private Map<ICustomPortal, PortalCooldownHelper> cooldownHelpers = new HashMap<>();
+    @Unique private boolean inHoney;
 
     @Override
     public Map<ICustomPortal, PortalCooldownHelper> sms_getPortalCooldownHelpers() {
@@ -57,4 +61,25 @@ public class MixinEntity implements IEntity {
         cooldownHelpers.forEach((block, portalHelper) -> portalCooldowns.put(Registry.BLOCK.getId((Block) block).toString(), portalHelper.toNbt()));
     }
 
+    @Inject(method = "baseTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;isInLava()Z"))
+    private void onTickFluid(CallbackInfo ci) {
+        if (inHoney) {
+            fallDistance = 0;
+        }
+    }
+
+    @Inject(method = "move", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;checkBlockCollision()V"))
+    private void preCheckBlockCollision(CallbackInfo ci) {
+        inHoney = false;
+    }
+
+    @Override
+    public boolean sms_isInHoney() {
+        return inHoney;
+    }
+
+    @Override
+    public void sms_setInHoney() {
+        inHoney = true;
+    }
 }

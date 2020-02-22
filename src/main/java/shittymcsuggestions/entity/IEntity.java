@@ -8,4 +8,8 @@ public interface IEntity {
 
     Map<ICustomPortal, PortalCooldownHelper> sms_getPortalCooldownHelpers();
 
+    boolean sms_isInHoney();
+
+    void sms_setInHoney();
+
 }

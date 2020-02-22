@@ -73,7 +73,7 @@ public class ModBlocks {
             .sounds(BlockSoundGroup.HONEY)
             .breakByTool(FabricToolTags.PICKAXES)
             .build());
-    public static final Block HONEY = new ModFluidBlock(ModFluids.HONEY, FabricBlockSettings.copy(Blocks.WATER).build());
+    public static final Block HONEY = new HoneyFluidBlock(ModFluids.HONEY, FabricBlockSettings.copy(Blocks.WATER).build());
 
     private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);

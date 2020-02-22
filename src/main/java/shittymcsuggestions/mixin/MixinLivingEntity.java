@@ -1,13 +1,16 @@
 package shittymcsuggestions.mixin;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.LlamaSpitEntity;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tag.Tag;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,12 +21,24 @@ import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import shittymcsuggestions.ModSounds;
+import shittymcsuggestions.block.ModFluidTags;
+import shittymcsuggestions.entity.IEntity;
 import shittymcsuggestions.entity.ModDamageSource;
 
 @Mixin(LivingEntity.class)
 public abstract class MixinLivingEntity extends Entity {
 
     @Shadow public abstract ItemStack getEquippedStack(EquipmentSlot equipmentSlot);
+
+    @Shadow public float lastLimbDistance;
+
+    @Shadow public float limbDistance;
+
+    @Shadow public float limbAngle;
+
+    @Shadow public abstract boolean hasStatusEffect(StatusEffect effect);
+
+    @Shadow protected abstract void swimUpward(Tag<Fluid> fluid);
 
     public MixinLivingEntity(EntityType<?> type, World world) {
         super(type, world);
@@ -61,4 +76,52 @@ public abstract class MixinLivingEntity extends Entity {
             world.playSound(null, getX(), getY(), getZ(), ModSounds.DEATH_BY_FALL, getSoundCategory(), 1, 1);
         }
     }
+
+    @Inject(method = "travel", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;isTouchingWater()Z"), cancellable = true)
+    private void onTravel(Vec3d movementInput, CallbackInfo ci) {
+        boolean cancel = false;
+
+        //noinspection ConstantConditions
+        if (!((Object) this instanceof PlayerEntity) || !((PlayerEntity) (Object) this).abilities.flying) {
+            if (((IEntity) this).sms_isInHoney()) {
+                double fallMultiplier = hasStatusEffect(StatusEffects.SLOW_FALLING) ? 0.01 : 0.08;
+                double oldY = this.getY();
+                updateVelocity(0.02f, movementInput);
+                move(MovementType.SELF, getVelocity());
+                setVelocity(getVelocity().multiply(0.5));
+                if (!hasNoGravity()) {
+                    setVelocity(getVelocity().add(0, -fallMultiplier / 4, 0));
+                }
+
+                Vec3d velocity = getVelocity();
+                if (horizontalCollision && doesNotCollide(velocity.x, velocity.y + 0.6 - getY() + oldY, velocity.z)) {
+                    setVelocity(velocity.x, 0.3, velocity.z);
+                }
+                cancel = true;
+            }
+        }
+
+        if (cancel) {
+            lastLimbDistance = limbDistance;
+            double xDelta = getX() - prevX;
+            double zDelta = getZ() - prevZ;
+            double yDelta = this instanceof Flutterer ? getY() - prevY : 0;
+            double deltaLimbs = MathHelper.sqrt(xDelta * xDelta + yDelta * yDelta + zDelta * zDelta) * 4;
+            if (deltaLimbs > 1) {
+                deltaLimbs = 1;
+            }
+
+            limbDistance += (deltaLimbs - limbDistance) * 0.4F;
+            limbAngle += limbDistance;
+            ci.cancel();
+        }
+    }
+
+    @Inject(method = "tickMovement", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;isInLava()Z"))
+    private void onTickMovement(CallbackInfo ci) {
+        if (((IEntity) this).sms_isInHoney()) {
+            swimUpward(ModFluidTags.HONEY);
+        }
+    }
+
 }
