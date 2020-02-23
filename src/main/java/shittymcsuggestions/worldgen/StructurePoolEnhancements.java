@@ -26,6 +26,7 @@ public class StructurePoolEnhancements {
 
     @SuppressWarnings("deprecation")
     public static void register() {
+        /*
         PlainsVillageData.initialize();
         SnowyVillageData.initialize();
         SavannaVillageData.initialize();
@@ -37,6 +38,8 @@ public class StructurePoolEnhancements {
         registerEnhancement("village/savanna/houses", new SinglePoolElement("shittymcsuggestions:mcdonalds"), 10);
         registerEnhancement("village/desert/houses", new SinglePoolElement("shittymcsuggestions:mcdonalds"), 10);
         registerEnhancement("village/taiga/houses", new SinglePoolElement("shittymcsuggestions:mcdonalds"), 10);
+         */
+        // McDonald's is too big :(
     }
 
 }

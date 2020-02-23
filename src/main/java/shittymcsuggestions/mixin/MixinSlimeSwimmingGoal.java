@@ -14,7 +14,7 @@ public class MixinSlimeSwimmingGoal {
 
     @Shadow @Final private SlimeEntity slime;
 
-    @Inject(method = "canStart", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "canStart()Z", at = @At("HEAD"), cancellable = true)
     private void onCanStart(CallbackInfoReturnable<Boolean> ci) {
         if (((IEntity) slime).sms_isInHoney()
                 && slime.getMoveControl() != null

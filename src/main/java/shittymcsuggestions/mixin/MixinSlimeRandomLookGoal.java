@@ -14,7 +14,7 @@ public class MixinSlimeRandomLookGoal {
 
     @Shadow @Final private SlimeEntity slime;
 
-    @Inject(method = "canStart", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "canStart()Z", at = @At("HEAD"), cancellable = true)
     private void onCanStart(CallbackInfoReturnable<Boolean> ci) {
         if (slime.getTarget() == null
                 && ((IEntity) slime).sms_isInHoney()
