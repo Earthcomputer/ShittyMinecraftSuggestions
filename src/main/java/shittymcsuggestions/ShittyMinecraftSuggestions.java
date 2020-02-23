@@ -47,6 +47,7 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ModStructures.register();
 
 		LocateCommandEnhancement.registerCommand();
+		//StructurePoolEnhancements.register();
 
 		ShearHandler.reigsterEvent();
 

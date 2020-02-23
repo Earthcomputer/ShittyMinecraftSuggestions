@@ -16,10 +16,24 @@ public abstract class MixinItemEntity {
 
     @Shadow public abstract ItemStack getStack();
 
+    @Unique private boolean readingTag;
+
+    @Inject(method = "readCustomDataFromTag", at = @At("HEAD"))
+    private void preReadFromTag(CallbackInfo ci) {
+        readingTag = true;
+    }
+
+    @Inject(method = "readCustomDataFromTag", at = @At("RETURN"))
+    private void postReadFromTag(CallbackInfo ci) {
+        readingTag = false;
+    }
+
     @Inject(method = "setStack", at = @At("HEAD"))
     private void onSetStack(ItemStack stack, CallbackInfo ci) {
-        age += getStackDespawnTime(getStack());
-        age -= getStackDespawnTime(stack);
+        if (!readingTag) {
+            age += getStackDespawnTime(getStack());
+            age -= getStackDespawnTime(stack);
+        }
     }
 
     @Unique

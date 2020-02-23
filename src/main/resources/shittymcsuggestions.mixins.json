@@ -52,6 +52,7 @@
     "LivingEntityAccessor",
     "LocateCommandAccessor",
     "SpawnEggItemAccessor",
+    "StructurePoolAccessor",
     "SurfaceChunkGeneratorAccessor",
     "WeightedPickerEntryAccessor"
   ],
