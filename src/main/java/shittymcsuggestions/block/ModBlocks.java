@@ -14,98 +14,89 @@ import shittymcsuggestions.ShittyMinecraftSuggestions;
 
 public class ModBlocks {
 
-    public static final Block DRAGON_EGG_BLOCK = new DragonEggBlockBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
+    public static final Block DRAGON_EGG_BLOCK = registerBlock("dragon_egg_block", new DragonEggBlockBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
             .strength(50, 1200)
-            .build());
-    public static final Block BEANOS_BLOCK = new Block(FabricBlockSettings.of(Material.CAKE, MaterialColor.PURPLE)
+            .build()), null);
+    public static final Block BEANOS_BLOCK = registerBlock("beanos_block", new Block(FabricBlockSettings.of(Material.CAKE, MaterialColor.PURPLE)
             .sounds(ModSounds.BEANOS_BLOCK_SOUND)
-            .build());
-    public static final Block UNLIT_TORCH = new UnlitTorchBlock(FabricBlockSettings.of(Material.PART)
+            .build()), ItemGroup.DECORATIONS);
+    public static final Block UNLIT_TORCH = registerBlock("unlit_torch", new UnlitTorchBlock(FabricBlockSettings.of(Material.PART)
             .noCollision()
             .breakInstantly()
             .sounds(BlockSoundGroup.WOOD)
-            .build());
-    public static final Block UNLIT_WALL_TORCH = new UnlitWallTorchBlock(FabricBlockSettings.of(Material.PART)
+            .build()), null);
+    public static final Block UNLIT_WALL_TORCH = registerBlock("unlit_wall_torch", new UnlitWallTorchBlock(FabricBlockSettings.of(Material.PART)
             .noCollision()
             .breakInstantly()
             .sounds(BlockSoundGroup.WOOD)
             .dropsLike(UNLIT_TORCH)
-            .build());
-    public static final Block GRASSHOPPER = new GrasshopperBlock(FabricBlockSettings.of(Material.ORGANIC, MaterialColor.GREEN)
+            .build()), null);
+    public static final Block GRASSHOPPER = registerBlock("grasshopper", new GrasshopperBlock(FabricBlockSettings.of(Material.ORGANIC, MaterialColor.GREEN)
             .strength(0.6f, 0.6f)
             .sounds(BlockSoundGroup.GRASS)
             .breakByTool(FabricToolTags.SHOVELS)
-            .build());
-    public static final Block THICC_TORCH = new ThiccTorchBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.YELLOW)
+            .build()), ItemGroup.REDSTONE);
+    public static final Block THICC_TORCH = registerBlock("thicc_torch", new ThiccTorchBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.YELLOW)
             .strength(2.0f,3.0f)
             .sounds(BlockSoundGroup.WOOD)
             .lightLevel(15)
             .nonOpaque()
-            .build());
-    public static final AetherPortalBlock AETHER_PORTAL = new AetherPortalBlock(FabricBlockSettings.of(Material.PORTAL)
+            .build()), ItemGroup.DECORATIONS);
+    public static final AetherPortalBlock AETHER_PORTAL = registerBlock("aether_portal", new AetherPortalBlock(FabricBlockSettings.of(Material.PORTAL)
             .noCollision()
             .strength(-1.0f, -1.0f)
             .sounds(BlockSoundGroup.GLASS)
             .lightLevel(11)
             .dropsNothing()
-            .build());
-    public static final Block COMPACTED_HONEYCOMB_BLOCK = new Block(FabricBlockSettings.of(Material.CLAY, MaterialColor.ORANGE)
+            .build()), null);
+    public static final Block COMPACTED_HONEYCOMB_BLOCK = registerBlock("compacted_honeycomb_block", new Block(FabricBlockSettings.of(Material.CLAY, MaterialColor.ORANGE)
             .strength(1f, 1f)
             .sounds(BlockSoundGroup.CORAL)
             .breakByTool(FabricToolTags.PICKAXES)
-            .build());
-    public static final HoneyPortalBlock HONEY_PORTAL = new HoneyPortalBlock(FabricBlockSettings.of(Material.PORTAL)
+            .build()), ItemGroup.DECORATIONS);
+    public static final HoneyPortalBlock HONEY_PORTAL = registerBlock("honey_portal", new HoneyPortalBlock(FabricBlockSettings.of(Material.PORTAL)
             .noCollision()
             .strength(-1.0f, -1.0f)
             .sounds(BlockSoundGroup.GLASS)
             .lightLevel(8)
             .dropsNothing()
-            .build());
-    public static final PistonBlock BEDROCK_PISTON = new BedrockPistonBlock(false, FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
+            .build()), null);
+    public static final PistonBlock BEDROCK_PISTON = registerBlock("bedrock_piston", new BedrockPistonBlock(false, FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
             .strength(-1f, 3600000f)
-            .build());
-    public static final PistonHeadBlock BEDROCK_PISTON_HEAD = new CustomPistonHeadBlock(BEDROCK_PISTON, null, FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
+            .build()), ItemGroup.REDSTONE);
+    public static final PistonHeadBlock BEDROCK_PISTON_HEAD = registerBlock("bedrock_piston_head", new CustomPistonHeadBlock(BEDROCK_PISTON, null, FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
             .strength(-1f, 3600000f)
             .dropsNothing()
-            .build());
-    public static final Block COMPRESSED_HONEY = new Block(FabricBlockSettings.of(Material.CLAY, MaterialColor.ORANGE)
+            .build()), null);
+    public static final Block COMPRESSED_HONEY = registerBlock("compressed_honey", new Block(FabricBlockSettings.of(Material.CLAY, MaterialColor.ORANGE)
             .strength(0.6f, 0.6f)
             .sounds(BlockSoundGroup.HONEY)
             .breakByTool(FabricToolTags.PICKAXES)
-            .build());
-    public static final Block HONEY = new HoneyFluidBlock(ModFluids.HONEY, FabricBlockSettings.copy(Blocks.WATER).build());
-    public static final Block WAX = new Block(FabricBlockSettings.copy(Blocks.END_STONE)
+            .build()), ItemGroup.DECORATIONS);
+    public static final Block HONEY = registerBlock("honey", new HoneyFluidBlock(ModFluids.HONEY, FabricBlockSettings.copy(Blocks.WATER).build()), null);
+    public static final Block WAX = registerBlock("wax", new Block(FabricBlockSettings.copy(Blocks.END_STONE)
             .sounds(BlockSoundGroup.CORAL)
-            .build());
-    public static final Block DIRT_SLAB = new SlabBlock(FabricBlockSettings
-            .copy(Blocks.DIRT)
-            .build());
+            .build()), ItemGroup.BUILDING_BLOCKS);
+    public static final Block DIRT_SLAB = registerBlock("dirt_slab", new SlabBlock(FabricBlockSettings.copy(Blocks.DIRT)
+            .breakByTool(FabricToolTags.SHOVELS)
+            .build()), ItemGroup.BUILDING_BLOCKS);
+    public static final Block CHEST_PLATE = registerBlock("chest_plate", new ModPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD)
+            .strength(2.5f, 2.5f)
+            .sounds(BlockSoundGroup.WOOD)
+            .build()), ItemGroup.REDSTONE);
 
-    private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
+    private static <T extends Block> T registerBlock(String name, T block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);
         if (itemGroup != null) {
             Registry.register(Registry.ITEM,
                     new Identifier(ShittyMinecraftSuggestions.MODID, name),
                     new BlockItem(block, new Item.Settings().group(itemGroup)));
         }
+        return block;
     }
 
     public static void register() {
-        registerBlock("dragon_egg_block", DRAGON_EGG_BLOCK, null);
-        registerBlock("beanos_block", BEANOS_BLOCK, ItemGroup.DECORATIONS);
-        registerBlock("unlit_torch", UNLIT_TORCH, null);
-        registerBlock("unlit_wall_torch", UNLIT_WALL_TORCH, null);
-        registerBlock("grasshopper", GRASSHOPPER, ItemGroup.REDSTONE);
-        registerBlock("thicc_torch", THICC_TORCH, ItemGroup.DECORATIONS);
-        registerBlock("aether_portal", AETHER_PORTAL, null);
-        registerBlock("compacted_honeycomb_block", COMPACTED_HONEYCOMB_BLOCK, ItemGroup.DECORATIONS);
-        registerBlock("honey_portal", HONEY_PORTAL, null);
-        registerBlock("bedrock_piston", BEDROCK_PISTON, ItemGroup.REDSTONE);
-        registerBlock("bedrock_piston_head", BEDROCK_PISTON_HEAD, null);
-        registerBlock("compressed_honey", COMPRESSED_HONEY, ItemGroup.DECORATIONS);
-        registerBlock("honey", HONEY, null);
-        registerBlock("wax", WAX, ItemGroup.BUILDING_BLOCKS);
-        registerBlock("dirt_slab", DIRT_SLAB, ItemGroup.BUILDING_BLOCKS);
+        // load class
     }
 
 }

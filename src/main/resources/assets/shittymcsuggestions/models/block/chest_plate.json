@@ -1,0 +1,6 @@
+{
+  "parent": "block/pressure_plate_up",
+  "textures": {
+    "texture": "shittymcsuggestions:block/chest_plate"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "shittymcsuggestions:block/chest_plate" },
+    "powered=true": { "model": "shittymcsuggestions:block/chest_plate_down" }
+  }
+}
