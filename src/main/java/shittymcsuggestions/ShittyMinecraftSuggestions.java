@@ -8,6 +8,12 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.decorator.Decorator;
+import net.minecraft.world.gen.decorator.DecoratorConfig;
+import net.minecraft.world.gen.feature.FeatureConfig;
 import shittymcsuggestions.block.ModBlocks;
 import shittymcsuggestions.block.ModFluids;
 import shittymcsuggestions.criterion.ModCriterions;
@@ -59,5 +65,10 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 				.addAll(((BlockEntityTypeAccessor) BlockEntityType.HOPPER).getBlocks())
 				.add(ModBlocks.GRASSHOPPER)
 				.build());
+
+		for (Biome biome : Registry.BIOME) {
+			biome.addStructureFeature(ModFeatures.MCDONALDS_FEATURE.configure(FeatureConfig.DEFAULT));
+			biome.addFeature(GenerationStep.Feature.SURFACE_STRUCTURES, ModFeatures.MCDONALDS_FEATURE.configure(FeatureConfig.DEFAULT).createDecoratedFeature(Decorator.NOPE.configure(DecoratorConfig.DEFAULT)));
+		}
 	}
 }

@@ -1,0 +1,50 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 10,
+        "max": 15
+      },
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "shittymcsuggestions:chicken_nugget",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 64
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 50,
+          "name": "minecraft:apple"
+        },
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "shittymcsuggestions:beanos"
+        },
+        {
+          "type": "item",
+          "weight": 50,
+          "name": "minecraft:cooked_chicken"
+        },
+        {
+          "type": "empty",
+          "weight": 50
+        }
+      ]
+    }
+  ]
+}

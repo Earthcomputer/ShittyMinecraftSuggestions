@@ -26,6 +26,7 @@ public class ModFeatures {
     public static final Feature<RandomPatchFeatureConfig> THICC_TORCH_FEATURE = new ThiccTorchFeature(RandomPatchFeatureConfig::deserialize);
     public static final Feature<CustomOreFeatureConfig> CUSTOM_ORE_FEATURE = new CustomOreFeature(CustomOreFeatureConfig::deserialize);
     public static final StructureFeature<DefaultFeatureConfig> BEE_NEST_FEATURE = new BeeNestFeature(DefaultFeatureConfig::deserialize);
+    public static final StructureFeature<DefaultFeatureConfig> MCDONALDS_FEATURE = new McDonaldsFeature(DefaultFeatureConfig::deserialize);
 
     private static void registerFeature(String name, Feature<?> feature) {
         Identifier id = new Identifier(ShittyMinecraftSuggestions.MODID, name);
@@ -42,6 +43,7 @@ public class ModFeatures {
         registerFeature("thicc_torch", THICC_TORCH_FEATURE);
         registerFeature("custom_ore", CUSTOM_ORE_FEATURE);
         registerFeature("bee_nest", BEE_NEST_FEATURE);
+        registerFeature("mcdonalds", MCDONALDS_FEATURE);
     }
 
 }

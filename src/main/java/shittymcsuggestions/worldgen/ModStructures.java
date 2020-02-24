@@ -8,6 +8,7 @@ import shittymcsuggestions.ShittyMinecraftSuggestions;
 public class ModStructures {
 
     public static final StructurePieceType BEE_NEST_PIECE = BeeNestGenerator.Piece::new;
+    public static final StructurePieceType MCDONALDS_PIECE = McDonaldsGenerator.Piece::new;
 
     private static void registerPiece(String name, StructurePieceType piece) {
         Registry.register(Registry.STRUCTURE_PIECE, new Identifier(ShittyMinecraftSuggestions.MODID, name), piece);
@@ -15,6 +16,7 @@ public class ModStructures {
 
     public static void register() {
         registerPiece("bee_nest", BEE_NEST_PIECE);
+        registerPiece("mcdonalds", MCDONALDS_PIECE);
     }
 
 }
