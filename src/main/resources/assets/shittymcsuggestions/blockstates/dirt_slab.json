@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "shittymcsuggestions:block/dirt_slab" },
+    "type=top": { "model": "shittymcsuggestions:block/dirt_slab_top" },
+    "type=double": { "model": "block/dirt" }
+  }
+}

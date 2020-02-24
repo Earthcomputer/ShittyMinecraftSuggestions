@@ -77,6 +77,9 @@ public class ModBlocks {
     public static final Block WAX = new Block(FabricBlockSettings.copy(Blocks.END_STONE)
             .sounds(BlockSoundGroup.CORAL)
             .build());
+    public static final Block DIRT_SLAB = new SlabBlock(FabricBlockSettings
+            .copy(Blocks.DIRT)
+            .build());
 
     private static void registerBlock(String name, Block block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);
@@ -102,6 +105,7 @@ public class ModBlocks {
         registerBlock("compressed_honey", COMPRESSED_HONEY, ItemGroup.DECORATIONS);
         registerBlock("honey", HONEY, null);
         registerBlock("wax", WAX, ItemGroup.BUILDING_BLOCKS);
+        registerBlock("dirt_slab", DIRT_SLAB, ItemGroup.BUILDING_BLOCKS);
     }
 
 }
