@@ -84,6 +84,10 @@ public class ModBlocks {
             .strength(2.5f, 2.5f)
             .sounds(BlockSoundGroup.WOOD)
             .build()), ItemGroup.REDSTONE);
+    public static final Block BEE_ORE = registerBlock("bee_ore", new Block(FabricBlockSettings.of(Material.STONE)
+            .strength(3f, 3f)
+            .breakByTool(FabricToolTags.PICKAXES, 2)
+            .build()), ItemGroup.BUILDING_BLOCKS);
 
     private static <T extends Block> T registerBlock(String name, T block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, new Identifier(ShittyMinecraftSuggestions.MODID, name), block);

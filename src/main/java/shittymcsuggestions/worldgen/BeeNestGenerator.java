@@ -33,6 +33,7 @@ public class BeeNestGenerator {
     private static final BlockState CAVE_AIR = Blocks.CAVE_AIR.getDefaultState();
     private static final BlockState WAX = ModBlocks.WAX.getDefaultState();
     private static final BlockState COMPACTED_HONEYCOMB = ModBlocks.COMPACTED_HONEYCOMB_BLOCK.getDefaultState();
+    private static final BlockState BEE_ORE = ModBlocks.BEE_ORE.getDefaultState();
     private static final BlockState HONEY = ModBlocks.HONEY.getDefaultState();
 
     public static void addPieces(BlockPos startingPos, List<StructurePiece> pieces, Random rand) {
@@ -148,7 +149,7 @@ public class BeeNestGenerator {
         @Override
         public boolean generate(IWorld world, ChunkGenerator<?> generator, Random random, BlockBox box, ChunkPos chunkPos) {
             placeWaxShell(world, box);
-            placePlatforms(world, box);
+            placePlatforms(world, box, random);
 
             return true;
         }
@@ -173,7 +174,7 @@ public class BeeNestGenerator {
             }
         }
 
-        private void placePlatforms(IWorld world, BlockBox currentBox) {
+        private void placePlatforms(IWorld world, BlockBox currentBox, Random rand) {
             for (Platform platform : platforms) {
                 //noinspection SuspiciousNameCombination - yarn derp
                 for (BlockPos pos : BlockPos.iterate(MathHelper.floor(platform.x - platform.rx), platform.y, MathHelper.floor(platform.z - platform.rz),
@@ -183,6 +184,12 @@ public class BeeNestGenerator {
                         double dz = pos.getZ() - platform.z;
                         if ((dx * dx) / (platform.rx * platform.rx) + (dz * dz) / (platform.rz * platform.rz) <= 1) {
                             world.setBlockState(pos, COMPACTED_HONEYCOMB, 2);
+                            if (rand.nextInt(8) == 0 && world.getBlockState(pos.up()).isAir()) {
+                                world.setBlockState(pos.up(), BEE_ORE, 2);
+                                if (rand.nextInt(10) == 0 && world.getBlockState(pos.up(2)).isAir()) {
+                                    world.setBlockState(pos.up(2), BEE_ORE, 2);
+                                }
+                            }
                         }
                     }
                 }
