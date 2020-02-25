@@ -43,9 +43,13 @@ public class ThiccTorchFeature extends Feature<RandomPatchFeatureConfig> {
                 try {
                     for (Direction dir : Direction.values()) {
                         BlockState placementState = state.with(ThiccTorchBlock.FACING, dir.getOpposite());
-                        BlockState stateBelow = world.getBlockState(placementPos.offset(dir));
-                        if (placementState.canPlaceAt(world, placementPos) && (config.whitelist.isEmpty() || config.whitelist.contains(stateBelow.getBlock())) && !config.blacklist.contains(stateBelow)) {
-                            validStates.add(placementState);
+                        BlockPos posBelow = placementPos.offset(dir);
+                        // Prevent thicc torches generating across chunk borders
+                        if (placementPos.getX() >> 4 == posBelow.getX() >> 4 && placementPos.getZ() >> 4 == posBelow.getZ() >> 4) {
+                            BlockState stateBelow = world.getBlockState(posBelow);
+                            if (placementState.canPlaceAt(world, placementPos) && (config.whitelist.isEmpty() || config.whitelist.contains(stateBelow.getBlock())) && !config.blacklist.contains(stateBelow)) {
+                                validStates.add(placementState);
+                            }
                         }
                     }
                     if (!validStates.isEmpty()) {
