@@ -1,5 +1,7 @@
 package shittymcsuggestions.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.CreeperEntity;
@@ -18,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import shittymcsuggestions.ModSounds;
 
 @Mixin(CreeperEntity.class)
+@Environment(EnvType.CLIENT)
 public class ClientMixinCreeperEntity extends HostileEntity {
 
     protected ClientMixinCreeperEntity(EntityType<? extends HostileEntity> type, World world) {

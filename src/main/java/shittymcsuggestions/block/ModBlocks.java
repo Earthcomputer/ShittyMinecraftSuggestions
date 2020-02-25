@@ -86,7 +86,7 @@ public class ModBlocks {
             .build()), ItemGroup.REDSTONE);
     public static final Block BEE_ORE = registerBlock("bee_ore", new Block(FabricBlockSettings.of(Material.STONE)
             .strength(3f, 3f)
-            .breakByTool(FabricToolTags.PICKAXES, 2)
+            .breakByTool(FabricToolTags.PICKAXES, 3)
             .build()), ItemGroup.BUILDING_BLOCKS);
 
     private static <T extends Block> T registerBlock(String name, T block, ItemGroup itemGroup) {

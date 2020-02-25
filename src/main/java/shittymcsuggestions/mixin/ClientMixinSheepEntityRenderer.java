@@ -1,5 +1,7 @@
 package shittymcsuggestions.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.SheepEntityRenderer;
 import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.util.Identifier;
@@ -12,6 +14,7 @@ import shittymcsuggestions.ShittyMinecraftSuggestions;
 import shittymcsuggestions.entity.ISheep;
 
 @Mixin(SheepEntityRenderer.class)
+@Environment(EnvType.CLIENT)
 public class ClientMixinSheepEntityRenderer {
 
     @Unique private static final Identifier ANGRY_SKIN = new Identifier(ShittyMinecraftSuggestions.MODID, "textures/entity/sheep_angry.png");

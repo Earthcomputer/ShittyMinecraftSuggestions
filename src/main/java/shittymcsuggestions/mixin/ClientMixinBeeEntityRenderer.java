@@ -1,5 +1,7 @@
 package shittymcsuggestions.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.BeeEntityRenderer;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;
@@ -19,6 +21,7 @@ import org.spongepowered.asm.mixin.Mixin;
  */
 @SuppressWarnings({"rawtypes", "unchecked"})
 @Mixin(BeeEntityRenderer.class)
+@Environment(EnvType.CLIENT)
 public abstract class ClientMixinBeeEntityRenderer extends MobEntityRenderer {
 
     public ClientMixinBeeEntityRenderer(EntityRenderDispatcher renderManager, EntityModel model, float f) {

@@ -1,6 +1,8 @@
 package shittymcsuggestions.mixin;
 
 import com.mojang.authlib.GameProfile;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
@@ -14,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import shittymcsuggestions.ModSounds;
 
 @Mixin(ClientPlayerEntity.class)
+@Environment(EnvType.CLIENT)
 public class ClientMixinClientPlayerEntity extends AbstractClientPlayerEntity {
 
     @Unique private static final double CHINA_VELOCITY = 0.25;
