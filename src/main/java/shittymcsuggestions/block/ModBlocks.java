@@ -74,7 +74,7 @@ public class ModBlocks {
             .breakByTool(FabricToolTags.PICKAXES)
             .build()), ItemGroup.DECORATIONS);
     public static final Block HONEY = registerBlock("honey", new HoneyFluidBlock(ModFluids.HONEY, FabricBlockSettings.copy(Blocks.WATER).build()), null);
-    public static final Block WAX = registerBlock("wax", new Block(FabricBlockSettings.copy(Blocks.END_STONE)
+    public static final Block WAX = registerBlock("wax", new WaxBlock(FabricBlockSettings.copy(Blocks.END_STONE)
             .sounds(BlockSoundGroup.CORAL)
             .build()), ItemGroup.BUILDING_BLOCKS);
     public static final Block DIRT_SLAB = registerBlock("dirt_slab", new SlabBlock(FabricBlockSettings.copy(Blocks.DIRT)

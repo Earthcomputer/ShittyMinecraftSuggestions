@@ -3,6 +3,7 @@
   "package": "shittymcsuggestions.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "accessor.BeeEntityAccessor",
     "accessor.BlockAccessor",
     "accessor.BlockEntityTypeAccessor",
     "accessor.BlockSoundGroupAccessor",

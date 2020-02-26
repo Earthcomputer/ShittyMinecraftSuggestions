@@ -14,6 +14,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import shittymcsuggestions.block.ModBlocks;
+import shittymcsuggestions.block.WaxBlock;
 import shittymcsuggestions.util.Ellipsoid;
 
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class BeeNestGenerator {
     private static final int ATTIC_HEIGHT = 9;
 
     private static final BlockState CAVE_AIR = Blocks.CAVE_AIR.getDefaultState();
-    private static final BlockState WAX = ModBlocks.WAX.getDefaultState();
+    private static final BlockState WAX = ((WaxBlock)ModBlocks.WAX).getDefaultState().with(WaxBlock.SPAWNS_BEE,true);;
     private static final BlockState COMPACTED_HONEYCOMB = ModBlocks.COMPACTED_HONEYCOMB_BLOCK.getDefaultState();
     private static final BlockState BEE_ORE = ModBlocks.BEE_ORE.getDefaultState();
     private static final BlockState HONEY = ModBlocks.HONEY.getDefaultState();
