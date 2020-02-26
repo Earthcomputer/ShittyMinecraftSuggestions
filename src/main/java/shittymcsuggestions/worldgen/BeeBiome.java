@@ -1,5 +1,7 @@
 package shittymcsuggestions.worldgen;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
@@ -34,11 +36,13 @@ public class BeeBiome extends Biome {
         addSpawn(EntityCategory.CREATURE, new Biome.SpawnEntry(EntityType.BEE, 10, 1, 3));
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public int getGrassColorAt(double x, double z) {
         return Biomes.JUNGLE.getGrassColorAt(x, z);
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public int getFoliageColor() {
         return Biomes.JUNGLE.getFoliageColor();
