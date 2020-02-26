@@ -11,7 +11,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 import shittymcsuggestions.ModSounds;
-import shittymcsuggestions.mixin.LivingEntityAccessor;
+import shittymcsuggestions.mixin.accessor.LivingEntityAccessor;
 import shittymcsuggestions.statuseffects.ModStatusEffects;
 
 public class BeanosItem extends Item {

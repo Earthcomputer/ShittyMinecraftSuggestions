@@ -2,12 +2,10 @@ package shittymcsuggestions.worldgen;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.structure.*;
-import net.minecraft.structure.pool.SinglePoolElement;
 import net.minecraft.structure.pool.StructurePoolBasedGenerator;
 import net.minecraft.structure.pool.StructurePoolElement;
 import net.minecraft.util.Identifier;
-import shittymcsuggestions.mixin.StructurePoolAccessor;
+import shittymcsuggestions.mixin.accessor.StructurePoolAccessor;
 
 public class StructurePoolEnhancements {
 

@@ -1,7 +1,7 @@
 package shittymcsuggestions.worldgen;
 
 import net.fabricmc.fabric.api.registry.CommandRegistry;
-import shittymcsuggestions.mixin.LocateCommandAccessor;
+import shittymcsuggestions.mixin.accessor.LocateCommandAccessor;
 
 import java.util.ArrayList;
 import java.util.List;

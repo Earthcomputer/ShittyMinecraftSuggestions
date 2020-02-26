@@ -23,10 +23,10 @@ import shittymcsuggestions.enchantment.ModEnchantments;
 import shittymcsuggestions.entity.ModEntities;
 import shittymcsuggestions.item.ModItems;
 import shittymcsuggestions.item.ShearHandler;
-import shittymcsuggestions.mixin.BlockAccessor;
-import shittymcsuggestions.mixin.BlockEntityTypeAccessor;
-import shittymcsuggestions.mixin.ItemAccessor;
-import shittymcsuggestions.mixin.SpawnEggItemAccessor;
+import shittymcsuggestions.mixin.accessor.BlockAccessor;
+import shittymcsuggestions.mixin.accessor.BlockEntityTypeAccessor;
+import shittymcsuggestions.mixin.accessor.ItemAccessor;
+import shittymcsuggestions.mixin.accessor.SpawnEggItemAccessor;
 import shittymcsuggestions.statuseffects.ModStatusEffects;
 import shittymcsuggestions.worldgen.*;
 

@@ -17,8 +17,8 @@ import net.minecraft.world.gen.ChunkRandom;
 import net.minecraft.world.gen.chunk.CavesChunkGenerator;
 import net.minecraft.world.gen.chunk.CavesChunkGeneratorConfig;
 import org.apache.logging.log4j.LogManager;
-import shittymcsuggestions.mixin.CavesChunkGeneratorAccessor;
-import shittymcsuggestions.mixin.SurfaceChunkGeneratorAccessor;
+import shittymcsuggestions.mixin.accessor.CavesChunkGeneratorAccessor;
+import shittymcsuggestions.mixin.accessor.SurfaceChunkGeneratorAccessor;
 
 import java.util.ArrayList;
 import java.util.List;

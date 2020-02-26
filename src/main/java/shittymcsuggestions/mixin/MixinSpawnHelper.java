@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import shittymcsuggestions.entity.FlippedMobs;
+import shittymcsuggestions.mixin.accessor.WeightedPickerEntryAccessor;
 
 import java.util.List;
 import java.util.Random;

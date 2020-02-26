@@ -4,7 +4,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import shittymcsuggestions.mixin.BlockSoundGroupAccessor;
+import shittymcsuggestions.mixin.accessor.BlockSoundGroupAccessor;
 
 public class ModSounds {
 

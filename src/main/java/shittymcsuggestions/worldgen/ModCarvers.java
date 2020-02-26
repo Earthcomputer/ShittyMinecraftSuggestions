@@ -6,7 +6,7 @@ import net.minecraft.world.gen.ProbabilityConfig;
 import net.minecraft.world.gen.carver.Carver;
 import net.minecraft.world.gen.carver.NetherCaveCarver;
 import shittymcsuggestions.ShittyMinecraftSuggestions;
-import shittymcsuggestions.mixin.CarverAccessor;
+import shittymcsuggestions.mixin.accessor.CarverAccessor;
 
 public class ModCarvers {
 

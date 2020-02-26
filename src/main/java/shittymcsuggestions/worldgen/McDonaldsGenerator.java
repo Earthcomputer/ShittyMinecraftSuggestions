@@ -13,7 +13,7 @@ import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import shittymcsuggestions.ShittyMinecraftSuggestions;
-import shittymcsuggestions.mixin.LootableContainerAccessor;
+import shittymcsuggestions.mixin.accessor.LootableContainerAccessor;
 
 import java.util.List;
 import java.util.Random;

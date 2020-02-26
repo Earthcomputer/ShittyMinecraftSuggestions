@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.ActionResult;
 import shittymcsuggestions.item.ModItems;
-import shittymcsuggestions.mixin.ItemUsageContextAccessor;
+import shittymcsuggestions.mixin.accessor.ItemUsageContextAccessor;
 
 public class LighterEnchantment extends Enchantment {
 

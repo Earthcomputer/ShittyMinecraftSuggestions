@@ -4,7 +4,7 @@ import net.minecraft.advancement.criterion.Criterion;
 import net.minecraft.advancement.criterion.OnKilledCriterion;
 import net.minecraft.util.Identifier;
 import shittymcsuggestions.ShittyMinecraftSuggestions;
-import shittymcsuggestions.mixin.CriterionsAccessor;
+import shittymcsuggestions.mixin.accessor.CriterionsAccessor;
 
 public class ModCriterions {
 
