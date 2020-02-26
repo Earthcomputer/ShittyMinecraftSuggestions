@@ -30,6 +30,7 @@
     "block.MixinWallBlock",
     "entity.MixinAnimalEntity",
     "entity.MixinAnimalMateGoal",
+    "entity.MixinBeeEntity",
     "entity.MixinChickenEntity",
     "entity.MixinDonkeyEntity",
     "entity.MixinEntity",

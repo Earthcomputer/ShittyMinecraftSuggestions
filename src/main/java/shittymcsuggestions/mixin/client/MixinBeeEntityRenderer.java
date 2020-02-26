@@ -9,6 +9,7 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
+import shittymcsuggestions.entity.IBee;
 
 /*
  * This mixin is weird because of generics. You would think you could just override the scale
@@ -30,6 +31,7 @@ public abstract class MixinBeeEntityRenderer extends MobEntityRenderer {
 
     @Override
     protected void scale(LivingEntity entity, MatrixStack matrixStack, float f) {
-        matrixStack.scale(4, 4, 4);
+        int size = ((IBee) entity).sms_getSize();
+        matrixStack.scale(size, size, size);
     }
 }
