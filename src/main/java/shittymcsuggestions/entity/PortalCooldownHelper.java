@@ -2,6 +2,7 @@ package shittymcsuggestions.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.math.BlockPos;
 import shittymcsuggestions.block.ICustomPortal;
 
 public class PortalCooldownHelper {
@@ -22,10 +23,11 @@ public class PortalCooldownHelper {
     private int ticksInPortal;
     private int cooldownTicks;
 
-    public void onEntityInPortal() {
+    public void onEntityInPortal(BlockPos portalPos) {
         if (cooldownTicks > 0) {
             cooldownTicks = portalBlock.getPortalCooldown(entity);
         } else {
+            portalBlock.preTeleportEntity(entity, portalPos);
             inPortal = true;
         }
     }

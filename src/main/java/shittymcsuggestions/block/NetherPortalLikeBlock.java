@@ -1,5 +1,6 @@
 package shittymcsuggestions.block;
 
+import com.google.common.cache.LoadingCache;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
@@ -7,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.block.pattern.BlockPattern;
+import net.minecraft.block.pattern.CachedBlockPosition;
 import net.minecraft.entity.Entity;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
@@ -15,8 +17,11 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import shittymcsuggestions.mixin.accessor.EntityAccessor;
 
 import java.util.Random;
 import java.util.Set;
@@ -77,9 +82,68 @@ public abstract class NetherPortalLikeBlock extends NetherPortalBlock implements
         return !perpendicular && blockState2.getBlock() != this && !(createAreaHelper0(iWorld, blockPos, portalAxis)).wasAlreadyValid() ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(blockState, direction, blockState2, iWorld, blockPos, blockPos2);
     }
 
+    @SuppressWarnings("unused")
     @Deprecated // to stop you accidentally calling the wrong method from the superclass
     public static BlockPattern.Result findPortal(IWorld world, BlockPos pos) {
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public BlockPattern.Result resolvePortal(World world, BlockPos pos) {
+        // find portal
+        Direction.Axis axis = Direction.Axis.Z;
+        AreaHelper areaHelper = createAreaHelper0(world, pos, Direction.Axis.X);
+        LoadingCache<BlockPos, CachedBlockPosition> loadingCache = BlockPattern.makeCache(world, true);
+        if (!areaHelper.isValid()) {
+            axis = Direction.Axis.X;
+            areaHelper = createAreaHelper0(world, pos, Direction.Axis.Z);
+            if (!areaHelper.isValid()) {
+                return new BlockPattern.Result(pos, Direction.NORTH, Direction.UP, loadingCache, 1, 1, 1);
+            }
+        }
+
+        // Find the least obstructed side of the portal
+        int[] blockedPositions = new int[Direction.AxisDirection.values().length];
+        Direction portalDir = areaHelper.negativeDir.rotateYCounterclockwise();
+        BlockPos corner = areaHelper.lowerCorner.up(areaHelper.getHeight() - 1);
+
+        for (Direction.AxisDirection portalSide : Direction.AxisDirection.values()) {
+            BlockPattern.Result pattern = new BlockPattern.Result(
+                    portalDir.getDirection() == portalSide ? corner : corner.offset(areaHelper.negativeDir, areaHelper.getWidth() - 1),
+                    Direction.get(portalSide, axis),
+                    Direction.UP,
+                    loadingCache,
+                    areaHelper.getWidth(),
+                    areaHelper.getHeight(),
+                    1
+            );
+
+            for (int x = 0; x < areaHelper.getWidth(); ++x) {
+                for (int y = 0; y < areaHelper.getHeight(); ++y) {
+                    CachedBlockPosition cachedBlockPosition = pattern.translate(x, y, 1);
+                    if (!cachedBlockPosition.getBlockState().isAir()) {
+                        blockedPositions[portalSide.ordinal()]++;
+                    }
+                }
+            }
+        }
+
+        Direction.AxisDirection lessBlockedSide = Direction.AxisDirection.POSITIVE;
+        for (Direction.AxisDirection portalSide : Direction.AxisDirection.values()) {
+            if (blockedPositions[portalSide.ordinal()] < blockedPositions[lessBlockedSide.ordinal()]) {
+                lessBlockedSide = portalSide;
+            }
+        }
+
+        return new BlockPattern.Result(
+                portalDir.getDirection() == lessBlockedSide ? corner : corner.offset(areaHelper.negativeDir, areaHelper.getWidth() - 1),
+                Direction.get(lessBlockedSide, axis),
+                Direction.UP,
+                loadingCache,
+                areaHelper.getWidth(),
+                areaHelper.getHeight(),
+                1
+        );
     }
 
     @Override
@@ -90,6 +154,25 @@ public abstract class NetherPortalLikeBlock extends NetherPortalBlock implements
     }
 
     protected void onEntityInPortal(World world, BlockPos pos, BlockState state, Entity entity) {
+    }
+
+    @Override
+    public void preTeleportEntity(Entity entity, BlockPos portalPos) {
+        ((EntityAccessor) entity).setLastNetherPortalPosition(portalPos.toImmutable());
+        BlockPattern.Result pattern = resolvePortal(entity.world, portalPos);
+        double hPos = pattern.getForwards().getAxis() == Direction.Axis.X ? (double)pattern.getFrontTopLeft().getZ() : (double)pattern.getFrontTopLeft().getX();
+        double horizontalPortalRatio = Math.abs(MathHelper.minusDiv(
+                (pattern.getForwards().getAxis() == Direction.Axis.X ? entity.getZ() : entity.getX()) - (pattern.getForwards().rotateYClockwise().getDirection() == Direction.AxisDirection.NEGATIVE ? 1 : 0),
+                hPos,
+                hPos - pattern.getWidth()
+        ));
+        double verticalPortalRatio = MathHelper.minusDiv(
+                entity.getY() - 1,
+                pattern.getFrontTopLeft().getY(),
+                pattern.getFrontTopLeft().getY() - pattern.getHeight()
+        );
+        ((EntityAccessor) entity).setLastNetherPortalDirectionVector(new Vec3d(horizontalPortalRatio, verticalPortalRatio, 0));
+        ((EntityAccessor) entity).setLastNetherPortalDirection(pattern.getForwards());
     }
 
     @Environment(EnvType.CLIENT)

@@ -84,7 +84,7 @@ public class CustomPortalForcer<T extends Block & ICustomPortal> implements Enti
                 .map(poi -> {
                     BlockPos pos = poi.getPos();
                     destination.getChunkManager().addTicket(ChunkTicketType.PORTAL, new ChunkPos(pos), 3, pos);
-                    BlockPattern.Result pattern = portalBlock.findPortal(destination, pos);
+                    BlockPattern.Result pattern = portalBlock.resolvePortal(destination, pos);
                     return pattern.getTeleportTarget(portalDir, pos, verticalOffset, teleported.getVelocity(), horizontalOffset);
                 })
                 .orElse(null);

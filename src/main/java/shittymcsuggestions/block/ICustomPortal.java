@@ -23,6 +23,13 @@ public interface ICustomPortal {
     }
 
     /**
+     * Called before teleporting the entity, does custom things sensitive to the portal's position,
+     * such as saving the portal's angle.
+     */
+    default void preTeleportEntity(Entity entity, BlockPos portalPos) {
+    }
+
+    /**
      * Teleports the entity to the other dimension
      */
     void teleportEntity(Entity entity);
@@ -30,8 +37,8 @@ public interface ICustomPortal {
     /**
      * Given a block position inside the portal, find the portal {@link BlockPattern}.
      */
-    default BlockPattern.Result findPortal(World world, BlockPos pos) {
-        return new BlockPattern.Result(pos, Direction.SOUTH, Direction.UP, null, 1, 1, 1);
+    default BlockPattern.Result resolvePortal(World world, BlockPos pos) {
+        return new BlockPattern.Result(pos, Direction.NORTH, Direction.UP, BlockPattern.makeCache(world, true), 1, 1, 1);
     }
 
 }

@@ -24,7 +24,7 @@ public class HoneyPortalBlock extends NetherPortalLikeBlock {
 
     @Override
     protected void onEntityInPortal(World world, BlockPos pos, BlockState state, Entity entity) {
-        PortalCooldownHelper.getInstance(entity, this).onEntityInPortal();
+        PortalCooldownHelper.getInstance(entity, this).onEntityInPortal(pos);
     }
 
     @Override

@@ -10,6 +10,7 @@
     "accessor.CarverAccessor",
     "accessor.CavesChunkGeneratorAccessor",
     "accessor.CriterionsAccessor",
+    "accessor.EntityAccessor",
     "accessor.GoalSelectorAccessor",
     "accessor.ItemAccessor",
     "accessor.ItemUsageContextAccessor",
