@@ -16,6 +16,7 @@
     "accessor.LivingEntityAccessor",
     "accessor.LocateCommandAccessor",
     "accessor.LootableContainerAccessor",
+    "accessor.PointOfInterestTypeAccessor",
     "accessor.SpawnEggItemAccessor",
     "accessor.StructurePoolAccessor",
     "accessor.SurfaceChunkGeneratorAccessor",

@@ -16,6 +16,7 @@ import net.minecraft.world.gen.decorator.DecoratorConfig;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import shittymcsuggestions.block.ModBlocks;
 import shittymcsuggestions.block.ModFluids;
+import shittymcsuggestions.block.ModPoiTypes;
 import shittymcsuggestions.criterion.ModCriterions;
 import shittymcsuggestions.dimension.ModChunkGenerators;
 import shittymcsuggestions.dimension.ModDimensions;
@@ -51,6 +52,7 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ModBiomes.register();
 		ModFeatures.register();
 		ModStructures.register();
+		ModPoiTypes.register();
 
 		LocateCommandEnhancement.registerCommand();
 		StructurePoolEnhancements.register();

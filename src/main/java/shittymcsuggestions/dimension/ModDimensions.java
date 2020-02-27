@@ -1,14 +1,14 @@
 package shittymcsuggestions.dimension;
 
 import net.fabricmc.fabric.api.dimension.v1.FabricDimensionType;
-import net.minecraft.block.pattern.BlockPattern;
 import net.minecraft.util.Identifier;
 import shittymcsuggestions.ShittyMinecraftSuggestions;
+import shittymcsuggestions.block.ModBlocks;
 
 public class ModDimensions {
 
     public static final FabricDimensionType BEE = FabricDimensionType.builder()
-            .defaultPlacer((oldEntity, destination, portalDir, horizontalOffset, verticalOffset) -> new BlockPattern.TeleportTarget(oldEntity.getPos(), oldEntity.getVelocity(), (int) oldEntity.yaw))
+            .defaultPlacer(ModBlocks.HONEY_PORTAL.forcer.get())
             .factory(HoneyDimension::new)
             .skyLight(false)
             .buildAndRegister(id("bee"));
