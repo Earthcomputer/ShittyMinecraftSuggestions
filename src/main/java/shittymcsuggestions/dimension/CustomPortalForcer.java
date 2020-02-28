@@ -107,7 +107,8 @@ public class CustomPortalForcer<T extends Block & ICustomPortal> implements Enti
         for (int dx = 0; dx < 4; dx++) {
             for (int dy = 1; dy < 5; dy++) {
                 for (int dz = -1; dz <= 1; dz++) {
-                    if (!destination.getBlockState(portalPos.set(x + dx * mx + dz * mz, y + dy, z + dx * mz + dz * mx)).getMaterial().isReplaceable()) {
+                    BlockState state = destination.getBlockState(portalPos.set(x + dx * mx + dz * mz, y + dy, z + dx * mz + dz * mx));
+                    if (!state.getMaterial().isReplaceable() || state.getMaterial().isLiquid()) {
                         return PREFERENCE_OBSTRUCTED;
                     }
                 }
