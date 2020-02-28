@@ -31,6 +31,9 @@ public class ModEntities {
     public static final EntityType<LoraxEntity> LORAX = FabricEntityTypeBuilder.create(EntityCategory.MONSTER, LoraxEntity::new)
             .size(EntityDimensions.fixed(0.6f, 1f))
             .build();
+    public static final EntityType<IceAgeBabyEntity> ICE_AGE_BABY = FabricEntityTypeBuilder.create(EntityCategory.CREATURE, IceAgeBabyEntity::new)
+            .size(EntityDimensions.fixed(1f, 1.31f))
+            .build();
 
     private static void registerEntity(String name, EntityType<?> entity) {
         Registry.register(Registry.ENTITY_TYPE, new Identifier(ShittyMinecraftSuggestions.MODID, name), entity);
@@ -43,6 +46,7 @@ public class ModEntities {
         registerEntity("pig_cow", PIG_COW);
         registerEntity("sheep_chicken", SHEEP_CHICKEN);
         registerEntity("lorax", LORAX);
+        registerEntity("ice_age_baby", ICE_AGE_BABY);
     }
 
     public static int getTrackingDistance(Entity entity, int oldDistance) {
