@@ -30,6 +30,7 @@ public class ModItems {
     public static final Item PIG_COW_SPAWN_EGG = new SpawnEggItem(ModEntities.PIG_COW, 0xa1a1a1, 0x443626, new Item.Settings().group(ItemGroup.MISC));
     public static final Item SHEEP_CHICKEN_SPAWN_EGG = new SpawnEggItem(ModEntities.SHEEP_CHICKEN, 0xff0000, 0xa1a1a1, new Item.Settings().group(ItemGroup.MISC));
     public static final Item LORAX_SPAWN_EGG = new SpawnEggItem(ModEntities.LORAX, 0xff7d00, 0xfef364, new Item.Settings().group(ItemGroup.MISC));
+    public static final Item SHREK_SPAWN_EGG = new SpawnEggItem(ModEntities.SHREK, 0x2d6e35, 0x54412a, new Item.Settings().group(ItemGroup.MISC));
     public static final Item LORAX_MOUSTACHE = new Item(new Item.Settings().group(ItemGroup.MISC));
     public static final Item CHICKEN_BUCKET = new EntityBucketItem(EntityType.CHICKEN, Fluids.EMPTY, (new Item.Settings()).maxCount(1).group(ItemGroup.MISC));
     public static final Item HONEY_BUCKET = new BucketItem(ModFluids.HONEY, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1).group(ItemGroup.MISC));
@@ -54,6 +55,7 @@ public class ModItems {
         registerItem("pig_cow_spawn_egg", PIG_COW_SPAWN_EGG);
         registerItem("sheep_chicken_spawn_egg", SHEEP_CHICKEN_SPAWN_EGG);
         registerItem("lorax_spawn_egg", LORAX_SPAWN_EGG);
+        registerItem("shrek_spawn_egg", SHREK_SPAWN_EGG);
         registerItem("lorax_moustache", LORAX_MOUSTACHE);
         registerItem("chicken_bucket", CHICKEN_BUCKET);
         registerItem("honey_bucket", HONEY_BUCKET);
