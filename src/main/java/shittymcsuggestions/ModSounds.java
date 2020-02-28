@@ -24,6 +24,7 @@ public class ModSounds {
     public static final SoundEvent FUCKING_DONKEY = registerSound("fuckingdonkey");
     public static final SoundEvent SHEEP_HIT = registerSound("sheephit");
     public static final SoundEvent DEATH_BY_FALL = registerSound("deathbyfall");
+    public static final SoundEvent YEET = registerSound("yeet");
 
     public static final SoundEvent ENTITY_LORAX_AMBIENT = registerSound("entity.shittymcsuggestions.lorax.ambient");
     public static final SoundEvent ENTITY_LORAX_HURT = registerSound("entity.shittymcsuggestions.lorax.hurt");
