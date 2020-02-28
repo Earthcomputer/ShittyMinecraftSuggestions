@@ -105,6 +105,13 @@
       "shittymcsuggestions:deathbyfall"
     ]
   },
+  "yeet": {
+    "subtitle": "subtitle.shittymcsuggestions.yeet",
+    "sounds": [
+      "shittymcsuggestions:yeet1",
+      "shittymcsuggestions:yeet2"
+    ]
+  },
   "entity.shittymcsuggestions.lorax.ambient": {
     "subtitle": "subtitle.entity.shittymcsuggestions.lorax.ambient",
     "sounds": [
