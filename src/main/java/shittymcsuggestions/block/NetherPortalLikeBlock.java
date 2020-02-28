@@ -148,16 +148,20 @@ public abstract class NetherPortalLikeBlock extends NetherPortalBlock implements
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isClient && !entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals()) {
+        if (!entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals()) {
             onEntityInPortal(world, pos, state, entity);
         }
     }
 
+    /**
+     * Called while the entity is in the portal.
+     * WARNING: this can be called on both sides, but teleportation typically should only happen on the server.
+     */
     protected void onEntityInPortal(World world, BlockPos pos, BlockState state, Entity entity) {
     }
 
     @Override
-    public void preTeleportEntity(Entity entity, BlockPos portalPos) {
+    public void tickPortalWarmup(Entity entity, BlockPos portalPos) {
         ((EntityAccessor) entity).setLastNetherPortalPosition(portalPos.toImmutable());
         BlockPattern.Result pattern = resolvePortal(entity.world, portalPos);
         double hPos = pattern.getForwards().getAxis() == Direction.Axis.X ? (double)pattern.getFrontTopLeft().getZ() : (double)pattern.getFrontTopLeft().getX();

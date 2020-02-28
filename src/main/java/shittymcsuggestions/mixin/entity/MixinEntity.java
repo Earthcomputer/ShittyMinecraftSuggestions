@@ -3,9 +3,11 @@ package shittymcsuggestions.mixin.entity;
 import net.fabricmc.fabric.api.util.NbtType;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -26,11 +28,13 @@ public class MixinEntity implements IEntity {
 
     @Shadow public float fallDistance;
 
-    @Unique private Map<ICustomPortal, PortalCooldownHelper> cooldownHelpers = new HashMap<>();
+    @Shadow public World world;
+    @Unique private Map<ICustomPortal, PortalCooldownHelper<?>> cooldownHelpers = new HashMap<>();
+    @Unique private Block customPortalOverlay;
     @Unique private boolean inHoney;
 
     @Override
-    public Map<ICustomPortal, PortalCooldownHelper> sms_getPortalCooldownHelpers() {
+    public Map<ICustomPortal, PortalCooldownHelper<?>> sms_getPortalCooldownHelpers() {
         return cooldownHelpers;
     }
 
@@ -48,10 +52,16 @@ public class MixinEntity implements IEntity {
                 Block block = Registry.BLOCK.get(Identifier.tryParse(key));
                 if (block instanceof ICustomPortal) {
                     cooldownHelpers.put((ICustomPortal) block,
-                            PortalCooldownHelper.fromNbt((Entity) (Object) this, (ICustomPortal) block, portalCooldowns.getCompound(key)));
+                            PortalCooldownHelper.fromNbt((Entity) (Object) this, toCustomPortal(block), portalCooldowns.getCompound(key)));
                 }
             }
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    @Unique
+    private static <T extends Block & ICustomPortal> T toCustomPortal(Block block) {
+        return (T) block;
     }
 
     @Inject(method = "toTag", at = @At("TAIL"))
@@ -70,7 +80,20 @@ public class MixinEntity implements IEntity {
 
     @Inject(method = "move", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;checkBlockCollision()V"))
     private void preCheckBlockCollision(CallbackInfo ci) {
+        //noinspection ConstantConditions
+        if (!world.isClient || !((Object) this instanceof PlayerEntity))
+            customPortalOverlay = null;
         inHoney = false;
+    }
+
+    @Override
+    public Block sms_getCustomPortalOverlay() {
+        return customPortalOverlay;
+    }
+
+    @Override
+    public void sms_setCustomPortalOverlay(Block portalBlock) {
+        this.customPortalOverlay = portalBlock;
     }
 
     @Override

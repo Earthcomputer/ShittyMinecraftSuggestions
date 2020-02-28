@@ -19,7 +19,8 @@ public class AetherPortalBlock extends NetherPortalLikeBlock {
 
     @Override
     protected void onEntityInPortal(World world, BlockPos pos, BlockState state, Entity entity) {
-        teleportEntity(entity);
+        if (!world.isClient)
+            teleportEntity(entity);
     }
 
     @Override
