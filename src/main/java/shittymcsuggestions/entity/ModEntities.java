@@ -34,6 +34,9 @@ public class ModEntities {
     public static final EntityType<ShrekEntity> SHREK = FabricEntityTypeBuilder.create(EntityCategory.MONSTER, ShrekEntity::new)
             .size(EntityDimensions.fixed(2, 3.5f))
             .build();
+    public static final EntityType<IceAgeBabyEntity> ICE_AGE_BABY = FabricEntityTypeBuilder.create(EntityCategory.CREATURE, IceAgeBabyEntity::new)
+            .size(EntityDimensions.fixed(1f, 1.31f))
+            .build();
 
     private static void registerEntity(String name, EntityType<?> entity) {
         Registry.register(Registry.ENTITY_TYPE, new Identifier(ShittyMinecraftSuggestions.MODID, name), entity);
@@ -47,6 +50,7 @@ public class ModEntities {
         registerEntity("sheep_chicken", SHEEP_CHICKEN);
         registerEntity("lorax", LORAX);
         registerEntity("shrek", SHREK);
+        registerEntity("ice_age_baby", ICE_AGE_BABY);
     }
 
     public static int getTrackingDistance(Entity entity, int oldDistance) {

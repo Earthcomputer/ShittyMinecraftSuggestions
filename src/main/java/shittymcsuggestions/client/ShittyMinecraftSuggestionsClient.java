@@ -42,6 +42,7 @@ public class ShittyMinecraftSuggestionsClient implements ClientModInitializer {
         EntityRendererRegistry.INSTANCE.register(ModEntities.SHEEP_CHICKEN, (dispatcher, ctx) -> new SheepChickenEntityRenderer(dispatcher));
         EntityRendererRegistry.INSTANCE.register(ModEntities.LORAX, (dispatcher, ctx) -> new LoraxEntityRenderer(dispatcher));
         EntityRendererRegistry.INSTANCE.register(ModEntities.SHREK, (dispatcher, ctx) -> new ShrekEntityRenderer(dispatcher));
+        EntityRendererRegistry.INSTANCE.register(ModEntities.ICE_AGE_BABY, (dispatcher, ctx) -> new IceAgeBabyEntityRenderer(dispatcher));
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.UNLIT_TORCH, ModBlocks.UNLIT_WALL_TORCH);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.AETHER_PORTAL, RenderLayer.getTranslucent());
