@@ -31,6 +31,7 @@ public class ModItems {
     public static final Item SHEEP_CHICKEN_SPAWN_EGG = new SpawnEggItem(ModEntities.SHEEP_CHICKEN, 0xff0000, 0xa1a1a1, new Item.Settings().group(ItemGroup.MISC));
     public static final Item LORAX_SPAWN_EGG = new SpawnEggItem(ModEntities.LORAX, 0xff7d00, 0xfef364, new Item.Settings().group(ItemGroup.MISC));
     public static final Item SHREK_SPAWN_EGG = new SpawnEggItem(ModEntities.SHREK, 0x2d6e35, 0x54412a, new Item.Settings().group(ItemGroup.MISC));
+    // TODO (Cortex): change ice age baby spawn egg colors
     public static final Item ICE_BABY_SPAWN_EGG = new SpawnEggItem(ModEntities.ICE_AGE_BABY, 0xff7d00, 0xfef364, new Item.Settings().group(ItemGroup.MISC));
     public static final Item LORAX_MOUSTACHE = new Item(new Item.Settings().group(ItemGroup.MISC));
     public static final Item CHICKEN_BUCKET = new EntityBucketItem(EntityType.CHICKEN, Fluids.EMPTY, (new Item.Settings()).maxCount(1).group(ItemGroup.MISC));
