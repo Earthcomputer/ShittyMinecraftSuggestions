@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Items;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
@@ -26,6 +27,7 @@ import shittymcsuggestions.item.ModItems;
 import shittymcsuggestions.item.ShearHandler;
 import shittymcsuggestions.mixin.accessor.BlockAccessor;
 import shittymcsuggestions.mixin.accessor.BlockEntityTypeAccessor;
+import shittymcsuggestions.mixin.accessor.BlockSoundGroupAccessor;
 import shittymcsuggestions.mixin.accessor.ItemAccessor;
 import shittymcsuggestions.mixin.accessor.SpawnEggItemAccessor;
 import shittymcsuggestions.statuseffects.ModStatusEffects;
@@ -60,6 +62,16 @@ public class ShittyMinecraftSuggestions implements ModInitializer {
 		ShearHandler.reigsterEvent();
 
 		((BlockAccessor) Blocks.BEDROCK).setDropTableId(new Identifier(MODID, "blocks/bedrock"));
+		BlockSoundGroup dispenserSoundGroup = Blocks.DISPENSER.getDefaultState().getSoundGroup();
+		((BlockAccessor) Blocks.DISPENSER).setSoundGroup(new BlockSoundGroup(
+				dispenserSoundGroup.volume,
+				dispenserSoundGroup.pitch,
+				((BlockSoundGroupAccessor) dispenserSoundGroup).sms_getBreakSound(),
+				dispenserSoundGroup.getStepSound(),
+				ModSounds.DISPENSER,
+				((BlockSoundGroupAccessor) dispenserSoundGroup).sms_getHitSound(),
+				dispenserSoundGroup.getFallSound()
+		));
 		((ItemAccessor) Items.MELON).setFoodComponent(FoodComponents.MELON_SLICE);
 		((SpawnEggItemAccessor) Items.SILVERFISH_SPAWN_EGG).setPrimaryColor(0xffb433);
 		((SpawnEggItemAccessor) Items.SILVERFISH_SPAWN_EGG).setSecondaryColor(0xff8000);

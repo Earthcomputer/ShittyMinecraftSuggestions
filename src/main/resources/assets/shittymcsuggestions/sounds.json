@@ -112,6 +112,13 @@
       "shittymcsuggestions:yeet2"
     ]
   },
+  "dispenser": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "shittymcsuggestions:dispenser",
+      "shittymcsuggestions:dispenser2"
+    ]
+  },
   "entity.shittymcsuggestions.lorax.ambient": {
     "subtitle": "subtitle.entity.shittymcsuggestions.lorax.ambient",
     "sounds": [
