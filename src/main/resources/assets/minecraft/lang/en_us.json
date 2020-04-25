@@ -90,5 +90,6 @@
   "block.minecraft.observer": "Owobserver",
   "item.minecraft.totem_of_undying": "Totem of Undyeing",
   "item.minecraft.diamond": "Block of Diamond Nugget",
-  "item.minecraft.silverfish_spawn_egg": "Goldfish Spawn Egg"
+  "item.minecraft.silverfish_spawn_egg": "Goldfish Spawn Egg",
+  "block.minecraft.hay_block": "Block of Wheat"
 }
